@@ -27,7 +27,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 			</Card>
 
 			{/* Modal para mostrar información completa */}
-			<Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered variant="custom">
+			<Modal isOpen={isOpen} onClose={onClose} size={"4xl"} isCentered variant="custom">
 				<ModalOverlay />
 				<ModalContent>
 					<ModalBody p={6}>

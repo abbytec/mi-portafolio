@@ -8,14 +8,14 @@ const jsonData = {
 			featured: true,
 			shortDesc: "Pequeña descripción",
 			longDesc: "Descripción extensa del proyecto...",
-			imageUrl: "/ruta-proyecto-1.jpg",
+			imageUrl: "https://placehold.co/600x400/EEE/31343C",
 		},
 		{
 			name: "Proyecto 2",
-			featured: false,
+			featured: true,
 			shortDesc: "Otra descripción breve",
 			longDesc: "Descripción larga para proyecto 2...",
-			imageUrl: "/ruta-proyecto-2.jpg",
+			imageUrl: "https://placehold.co/600x400/FCC/31343C",
 		},
 		// Más proyectos...
 	],

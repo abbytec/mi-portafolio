@@ -1,42 +1,66 @@
 // app/experiencies/page.js
 "use client";
 
-import { useState, useEffect } from "react";
-import { Heading, SimpleGrid, Container, Text } from "@chakra-ui/react";
-import ProjectCard, { Project } from "@/components/ui/projectCard";
+import { useEffect, useState } from "react";
+import { Container, Heading, Text, Box } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/next-js";
 
-export default function ProjectsPage() {
-	const [projects, setProjects] = useState<Project[]>([]);
+interface Experience {
+	title: string;
+	description: string;
+	period: string;
+	url?: string;
+}
+
+interface ExperiencesResponse {
+	experiences: Experience[];
+	other: string[];
+}
+
+export default function ExperienciasPage() {
+	const [data, setData] = useState<ExperiencesResponse | null>(null);
 
 	useEffect(() => {
-		const fetchAllProjects = async () => {
-			try {
-				const response = await fetch("/api/projects");
-				const data = await response.json();
-				// Suponiendo que el JSON sea { projects: [...] }
-				setProjects(data.projects);
-			} catch (error) {
-				console.error("Error fetching projects:", error);
-			}
+		const fetchData = async () => {
+			const res = await fetch("/api/experiences");
+			const json = await res.json();
+			setData(json);
 		};
-		fetchAllProjects();
+		fetchData();
 	}, []);
+
+	if (!data) return <Text>Cargando...</Text>;
 
 	return (
 		<Container maxW="container.lg" py={8}>
-			<Heading as="h1" mb={6}>
-				Lista Completa de Proyectos
-			</Heading>
+			<h1>Experiencias</h1>
+			{data.experiences.map((exp) => (
+				<Box key={exp.title} mb={6}>
+					{exp.url && (
+						<Link href={exp.url} as="h3" style={{ fontSize: "24px" }} mb={1}>
+							{exp.title}
+						</Link>
+					)}
 
-			{projects.length === 0 ? (
-				<Text>No hay proyectos disponibles</Text>
-			) : (
-				<SimpleGrid columns={[1, 2, 3]} spacing={6}>
-					{projects.map((project) => (
-						<ProjectCard key={project.name} project={project} />
-					))}
-				</SimpleGrid>
-			)}
+					{!exp.url && (
+						<Heading as="h3" style={{ fontSize: "24px" }} mb={1}>
+							{exp.title}
+						</Heading>
+					)}
+
+					<Text fontStyle="italic" mb={2} color={"accent"}>
+						{exp.period}
+					</Text>
+					<Text>{exp.description}</Text>
+				</Box>
+			))}
+
+			<h2>Actividades Extra</h2>
+			{data.other.map((activity, i) => (
+				<Text key={i} mb={2}>
+					• {activity}
+				</Text>
+			))}
 		</Container>
 	);
 }
