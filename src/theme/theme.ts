@@ -37,6 +37,10 @@ const theme = extendTheme({
 				default: "#ff00ae",
 				_dark: "#d1008f",
 			},
+			secondary: {
+				default: "#b300d1",
+				_dark: "#ff00d2",
+			},
 		},
 	},
 	components: {
@@ -91,9 +95,16 @@ const theme = extendTheme({
 			a: {
 				fontWeight: "bold",
 				_hover: {
-					backgroundClip: "text",
-					WebkitBackgroundClip: "text",
 					color: "var(--chakra-colors-accent)",
+					textDecoration: "none!important",
+					transition: "all 0.45s",
+					cursor: "pointer",
+				},
+			},
+			strong: {
+				color: "var(--chakra-colors-accent)",
+				_hover: {
+					color: "var(--chakra-colors-secondary)",
 					textDecoration: "none",
 					transition: "all 0.45s",
 				},

@@ -57,7 +57,7 @@ export default function ExperienciasPage() {
 
 			<h2>Actividades Extra</h2>
 			{data.other.map((activity, i) => (
-				<Text key={i} mb={2}>
+				<Text key={"activity-" + i} mb={2}>
 					• {activity}
 				</Text>
 			))}
