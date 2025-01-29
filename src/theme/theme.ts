@@ -47,7 +47,14 @@ const theme = extendTheme({
 		Button: {
 			variants: {
 				custom: {
-					bg: "panel",
+					bg: "secondary",
+					color: "bg",
+					_hover: {
+						opacity: 0.8,
+					},
+				},
+				custom2: {
+					bg: "accent",
 					color: "text",
 					_hover: {
 						opacity: 0.8,
