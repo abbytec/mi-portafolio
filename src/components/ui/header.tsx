@@ -74,34 +74,38 @@ export default function Header() {
 			{/* Drawer a pantalla completa para mostrar el menú en móviles */}
 			<Drawer isOpen={isOpen} onClose={onClose} placement="left" size="full">
 				<DrawerOverlay />
-				<DrawerContent>
+				<DrawerContent bg="var(--chakra-colors-panel)">
 					<DrawerCloseButton onClick={playClickSound} />
 					<DrawerHeader borderBottomWidth="1px">Menú</DrawerHeader>
 					<DrawerBody>
 						<VStack align="stretch" spacing={4}>
-							{navLinks.map((link) => (
-								<NextLink href={link.href} key={link.href} passHref>
-									{/* 
+							{navLinks.map((link) => {
+								const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+								return (
+									<NextLink href={link.href} key={link.href} passHref>
+										{/* 
                Puedes usar <Button>, <Box> o <Link> de Chakra 
                con estilos a tu gusto
             */}
-									<Box
-										as="button"
-										onClick={() => {
-											playClickSound();
-											onClose();
-										}}
-										width="100%" // O w="full"
-										py={3}
-										fontSize="xl"
-										textAlign="center"
-										// Agrega más estilos si deseas
-
-										_hover={{ bg: "var(--chakra-colors-cardBg)", color: "var(--chakra-colors-accent)" }}>
-										{link.label}
-									</Box>
-								</NextLink>
-							))}
+										<Box
+											as="button"
+											onClick={() => {
+												playClickSound();
+												onClose();
+											}}
+											width="100%" // O w="full"
+											py={3}
+											fontSize="xl"
+											textAlign="center"
+											// Agrega más estilos si deseas
+											bg={isActive ? "var(--chakra-colors-cardBg)" : "transparent"}
+											color={isActive ? "var(--chakra-colors-accent)" : "inherit"}
+											_hover={{ bg: "var(--chakra-colors-cardBg)", color: "var(--chakra-colors-accent)" }}>
+											{link.label}
+										</Box>
+									</NextLink>
+								);
+							})}
 						</VStack>
 					</DrawerBody>
 				</DrawerContent>
