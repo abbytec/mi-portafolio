@@ -4,6 +4,7 @@ import Header from "../components/ui/header"; // Crearás este componente a cont
 import Providers from "./providers";
 import { Metadata } from "next";
 import { merriweather, caveat, specialElite } from "@/theme/fonts";
+import { PortalManager } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
 	title: "Abigail Palmero",
@@ -16,8 +17,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 			<head></head>
 			<body className={`${merriweather.variable} ${caveat.variable} ${specialElite.variable}`}>
 				<Providers>
-					<Header />
-					<main style={{ padding: "1rem" }}>{children}</main>
+					<PortalManager>
+						<Header />
+						<main style={{ padding: "1rem" }}>{children}</main>
+					</PortalManager>
 				</Providers>
 			</body>
 		</html>

@@ -19,11 +19,9 @@ export default function Providers({ children }: Readonly<{ children: React.React
 		}
 	}, [neko]);
 	return (
-		<div suppressHydrationWarning={true}>
-			<ChakraProvider theme={theme}>
-				<ColorModeScript initialColorMode={theme.config.initialColorMode} />
-				{children}
-			</ChakraProvider>
+		<div>
+			<ColorModeScript initialColorMode={theme.config.initialColorMode} />
+			<ChakraProvider theme={theme}>{children}</ChakraProvider>
 		</div>
 	);
 }
