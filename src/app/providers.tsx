@@ -19,7 +19,7 @@ export default function Providers({ children }: Readonly<{ children: React.React
 		}
 	}, [neko]);
 	return (
-		<div>
+		<div id="interfaz">
 			<ColorModeScript initialColorMode={theme.config.initialColorMode} />
 			<ChakraProvider theme={theme}>{children}</ChakraProvider>
 		</div>

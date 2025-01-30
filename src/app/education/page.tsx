@@ -147,7 +147,7 @@ export default function EducationPage() {
 			{/* Paths */}
 			<h3>Rutas de Aprendizaje</h3>
 			{finalFilteredPaths?.map((path) => (
-				<Card key={path.name} mb={4}>
+				<Card key={path.name} mb={4} bg={"panel"}>
 					<CardHeader paddingBottom={3}>
 						<Heading size="sm">{path.name}</Heading>
 					</CardHeader>
@@ -167,7 +167,7 @@ export default function EducationPage() {
 			{/* Courses */}
 			<h3>Cursos Individuales</h3>
 			{finalFilteredCourses?.map((course) => (
-				<Card key={course.id} mb={4}>
+				<Card key={course.id} mb={4} bg={"panel"}>
 					<CardHeader paddingBottom={3}>
 						<Heading size="sm">{course.title}</Heading>
 					</CardHeader>
