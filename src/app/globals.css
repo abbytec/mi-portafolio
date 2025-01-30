@@ -1,0 +1,16 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0px 0px 0px 5px var(--chakra-colors-text);
+}
+html {
+    background: var(--chakra-colors-panel);
+}
+
+main {
+    height: calc(100vh - 72px);
+    min-height: max-content;
+}
