@@ -2,7 +2,8 @@
 "use client";
 import { useEffect, useState, useMemo } from "react";
 import { Heading, Text, Card, CardHeader, CardBody, Button, ButtonGroup, Box } from "@chakra-ui/react";
-import { Education } from "../api/education/route";
+import { Education, StackIds } from "../api/education/route";
+import { Link } from "@chakra-ui/next-js";
 
 export default function EducationPage() {
 	const [education, setEducation] = useState<Education | null>(null);
@@ -26,7 +27,7 @@ export default function EducationPage() {
 			return education?.paths;
 		}
 		// Filtrar solo los paths que contengan la categoría en sus technologiesIds
-		return education?.paths.filter((path) => path.technologiesIds.includes(selectedCategoryStack));
+		return education?.paths.filter((path) => path.technologiesIds.includes(selectedCategoryStack as StackIds));
 	}, [education?.paths, selectedCategoryStack]);
 
 	const filteredIndividualCourses = useMemo(() => {
@@ -37,7 +38,7 @@ export default function EducationPage() {
 			return individualCourses;
 		}
 		// Devolver solo los individuales que tengan la categoría en sus technologiesIds
-		return individualCourses?.filter((course) => course.technologiesIds.includes(selectedCategoryStack));
+		return individualCourses?.filter((course) => course.technologiesIds.includes(selectedCategoryStack as StackIds));
 	}, [education?.courses, selectedCategoryStack]);
 
 	// ----------------------------------------------------------------
@@ -64,12 +65,12 @@ export default function EducationPage() {
 	// ----------------------------------------------------------------
 	const finalFilteredPaths = useMemo(() => {
 		if (!selectedSubStack) return filteredPaths;
-		return filteredPaths?.filter((path) => path.technologiesIds.includes(selectedSubStack));
+		return filteredPaths?.filter((path) => path.technologiesIds.includes(selectedSubStack as StackIds));
 	}, [filteredPaths, selectedSubStack]);
 
 	const finalFilteredCourses = useMemo(() => {
 		if (!selectedSubStack) return filteredIndividualCourses;
-		return filteredIndividualCourses?.filter((course) => course.technologiesIds.includes(selectedSubStack));
+		return filteredIndividualCourses?.filter((course) => course.technologiesIds.includes(selectedSubStack as StackIds));
 	}, [filteredIndividualCourses, selectedSubStack]);
 
 	if (!education) return <div>Loading...</div>;
@@ -149,17 +150,17 @@ export default function EducationPage() {
 			{finalFilteredPaths?.map((path) => (
 				<Card key={path.name} mb={4} bg={"panel"}>
 					<CardHeader paddingBottom={3}>
-						<Heading size="sm">{path.name}</Heading>
+						{path.url && (
+							<Link href={path.url} target="_blank" color={"accent"}>
+								{path.name}
+							</Link>
+						)}
+						{!path.url && <Heading size="sm">{path.name}</Heading>}
 					</CardHeader>
 					<CardBody paddingTop={0}>
 						<Text>Periodo: {path.period}</Text>
 						<Text>Cursos: {mapTechIdsToNames(path.coursesIds)}</Text>
 						<Text>Tecnologías: {mapTechIdsToNames(path.technologiesIds)}</Text>
-						{path.url && (
-							<Text as="a" href={path.url} color="blue.500" target="_blank">
-								Ver más
-							</Text>
-						)}
 					</CardBody>
 				</Card>
 			))}
@@ -169,7 +170,12 @@ export default function EducationPage() {
 			{finalFilteredCourses?.map((course) => (
 				<Card key={course.id} mb={4} bg={"panel"}>
 					<CardHeader paddingBottom={3}>
-						<Heading size="sm">{course.title}</Heading>
+						{course.url && (
+							<Link href={course.url} target="_blank" color={"accent"}>
+								{course.title}
+							</Link>
+						)}
+						{!course.url && <Heading size="sm">{course.title}</Heading>}
 					</CardHeader>
 					<CardBody paddingTop={0}>
 						<Text>Descripción: {course.description}</Text>
