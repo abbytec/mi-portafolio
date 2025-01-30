@@ -22,6 +22,7 @@ import {
 } from "@chakra-ui/react";
 import { Education, StackIds } from "../api/education/route";
 import { Link } from "@chakra-ui/next-js";
+import { compareTimes } from "@/utils/time";
 
 export default function EducationPage() {
 	const [education, setEducation] = useState<Education | null>(null);
@@ -39,7 +40,8 @@ export default function EducationPage() {
 	useEffect(() => {
 		const fetchData = async () => {
 			const res = await fetch("/api/education");
-			const data = await res.json();
+			const data: Education = await res.json();
+			data.paths = data.paths.toSorted((a, b) => compareTimes(a.duration, b.duration));
 			setEducation(data);
 		};
 		fetchData();
@@ -177,7 +179,7 @@ export default function EducationPage() {
 						)}
 					</CardHeader>
 					<CardBody paddingTop={0}>
-						<Text>Periodo: {path.period}</Text>
+						{path.duration && <Text>Duración: {path.duration}</Text>}
 
 						{path.coursesIds.length > 0 && (
 							<Link
@@ -211,7 +213,7 @@ export default function EducationPage() {
 					</CardHeader>
 					<CardBody paddingTop={0}>
 						{course.description && <Text>Descripción: {course.description}</Text>}
-						<Text>Período: {course.period}</Text>
+						{course.duration && <Text>Duración: {course.duration}</Text>}
 						<Text>Tecnologías: {mapTechIdsToNames(course.technologiesIds)}</Text>
 						{course.url && (
 							<Text as="a" href={course.url} color="blue.500" target="_blank">
@@ -251,7 +253,7 @@ export default function EducationPage() {
 										)}
 
 										{course.description && <Text fontSize="sm">Descripción: {course.description}</Text>}
-										<Text fontSize="sm">Período: {course.period}</Text>
+										{course.duration && <Text fontSize="sm">Duración: {course.duration}</Text>}
 										<Text fontSize="sm">Tecnologías: {mapTechIdsToNames(course.technologiesIds)}</Text>
 									</ListItem>
 								);
