@@ -58,13 +58,13 @@ export default function Contact() {
 				<VStack align="start" spacing={2}>
 					<Text>
 						Email:{" "}
-						<Link href="mailto:gpsmurfs@gmail.com" color="teal.500">
+						<Link href="mailto:gpsmurfs@gmail.com" color="accent">
 							gpsmurfs@gmail.com
 						</Link>
 					</Text>
 					<Text>
 						Teléfono:{" "}
-						<Link href="tel:+5493541209175" color="teal.500">
+						<Link href="tel:+5493541209175" color="accent">
 							+54 9 3541 209175
 						</Link>
 					</Text>
