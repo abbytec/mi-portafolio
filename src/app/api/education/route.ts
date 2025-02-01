@@ -267,7 +267,6 @@ const jsonData: Education = {
 		{ id: "elasticsearch", name: "ElasticSearch", color: "#005571" },
 
 		{ id: "seguridad-y-redes", name: "Seguridad y Redes", isCategory: true, color: "#e74c3c" },
-
 		{ id: "genericos", name: "Genéricos", isCategory: true, color: "#95a5a6" },
 		{ id: "desarrollo-movil", name: "Desarrollo Móvil", isCategory: true, color: "#16a085" },
 

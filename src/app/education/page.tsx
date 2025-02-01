@@ -124,6 +124,7 @@ export default function EducationPage() {
 		onOpen();
 	};
 
+
 	if (!education) return <div>Loading...</div>;
 
 	return (
