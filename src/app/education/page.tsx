@@ -124,7 +124,6 @@ export default function EducationPage() {
 		onOpen();
 	};
 
-
 	if (!education) return <div>Loading...</div>;
 
 	return (
@@ -132,14 +131,14 @@ export default function EducationPage() {
 			<h1>Educación</h1>
 			<h2>Formación académica</h2>
 			<Flex mb={4} gap={4} justifyContent={"space-between"} wrap={"wrap"}>
-				<Card variant={"custom2"} p={4} w={"600px"}>
+				<Card variant={"custom"} p={4} w={"600px"}>
 					<Link href="https://www.iua.edu.ar/" fontWeight="bold" mb={2} color={"secondary"}>
 						Instituto Universitario Aeronáutico
 					</Link>
 					<Text>Formación Universitaria</Text>
 					<Text>Estudiante avanada en Ingeniería en Informática.</Text>
 				</Card>
-				<Card variant={"custom2"} p={4} w={"600px"}>
+				<Card variant={"custom"} p={4} w={"600px"}>
 					<Link href="https://www.iico.com.ar/" fontWeight="bold" mb={2} color={"secondary"}>
 						Instituto Industrial Cristo Obrero (IICO)
 					</Link>

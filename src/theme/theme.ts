@@ -88,7 +88,7 @@ const theme = extendTheme({
 				fontFamily: "var(--font-merriweather), serif",
 			},
 			header: {
-				bg: "var(--chakra-colors-cardBg)",
+				bg: "var(--chakra-colors-panel)",
 			},
 			h1: {
 				fontSize: "64px",
