@@ -130,15 +130,15 @@ export default function EducationPage() {
 		<Container maxW={{ base: "container.xl" }} py={8}>
 			<h1>Educación</h1>
 			<h2>Formación académica</h2>
-			<Flex mb={4} gap={32}>
-				<Card variant={"custom2"} p={4} w={"500px"}>
+			<Flex mb={4} gap={4} justifyContent={"space-between"} wrap={"wrap"}>
+				<Card variant={"custom2"} p={4} w={"600px"}>
 					<Link href="https://www.iua.edu.ar/" fontWeight="bold" mb={2} color={"secondary"}>
 						Instituto Universitario Aeronáutico
 					</Link>
 					<Text>Formación Universitaria</Text>
 					<Text>Estudiante avanada en Ingeniería en Informática.</Text>
 				</Card>
-				<Card variant={"custom2"} p={4} w={"500px"}>
+				<Card variant={"custom2"} p={4} w={"600px"}>
 					<Link href="https://www.iico.com.ar/" fontWeight="bold" mb={2} color={"secondary"}>
 						Instituto Industrial Cristo Obrero (IICO)
 					</Link>
@@ -254,7 +254,7 @@ export default function EducationPage() {
 			<Flex flexWrap={"wrap"} gap={6} justifyContent={"center"}>
 				{finalFilteredCourses?.map((course) => {
 					return (
-						<Card key={course.id} variant={"custom"} w={500}>
+						<Card key={course.id} variant={"custom"} w={600}>
 							<CardHeader paddingBottom={3}>
 								{course.duration && (
 									<Text display={"flex"} alignItems={"center"} fontFamily={"cursive"} mb={3}>

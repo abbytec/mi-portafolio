@@ -42,7 +42,7 @@ export default function Header() {
 	return (
 		<Flex as="header" p={4} alignItems="center" justifyContent="space-between" boxShadow="md">
 			{/* Breadcrumb visible en pantallas medianas y grandes */}
-			<Breadcrumb as="nav" separator="-" display={{ base: "none", md: "block" }}>
+			<Breadcrumb as="nav" separator="-" display={{ base: "none", md: "block" }} margin={"0 auto"}>
 				{navLinks.map((link) => {
 					const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
 
