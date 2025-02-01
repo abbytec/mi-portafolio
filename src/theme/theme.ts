@@ -30,7 +30,7 @@ const theme = extendTheme({
 				_dark: "#F5F5F7", // mismo color que "text" en dark
 			},
 			panel: {
-				default: "#ffffff",
+				default: "#ECECEE",
 				_dark: "#2d2d2d",
 			},
 			text: {
