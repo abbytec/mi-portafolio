@@ -16,6 +16,7 @@ import {
 	ModalOverlay,
 	useDisclosure,
 	ModalCloseButton,
+	Button,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
@@ -44,8 +45,7 @@ export default function Home() {
 			<Stack direction={{ base: "column", md: "row" }} spacing={10}>
 				<Box
 					h="220px"
-					maxW="185px"
-					minW="185px"
+					w="185px!important"
 					overflow="hidden"
 					rounded="lg"
 					cursor="pointer"
@@ -66,10 +66,13 @@ export default function Home() {
 				<VStack spacing={6} textAlign="center">
 					<h1 style={{ fontWeight: "bold" }}>¡Hola! Me llamo Abigaíl</h1>
 					<Text fontSize="xl">Soy una desarrolladora Full Stack enfocada en crear experiencias innovadoras.</Text>
+					<Text fontSize="md" marginRight={"auto"} style={{ color: "var(--chakra-colors-accent" }}>
+						&lt;&lt;----- Click en la imagen para ampliarla.
+					</Text>
 				</VStack>
 			</Stack>
 
-			<Box mt={16}>
+			<Box mt={10}>
 				<h2>Acerca de mí</h2>
 				<Text mb={4}>
 					Programadora autodidacta desde temprana edad, interesada en ampliar mis experiencias en el ámbito del software a nivel
@@ -98,7 +101,24 @@ export default function Home() {
 					forma.
 				</Text>
 			</Box>
-			<Box mt={16}>
+			<Box mt={10}>
+				<h2>Idiomas</h2>
+				<Box display={"flex"} gap={4}>
+					<Button p={5} rounded="md" shadow="md" display={"flex"} alignItems={"center"}>
+						<Image src="/flags/es.png" aria-label="Spanish" w={"24px"} alt="Spanish" rounded="100" marginRight={2} />
+						<h3>C2</h3>
+					</Button>
+					<Button p={5} rounded="md" shadow="md" display={"flex"} alignItems={"center"}>
+						<Image src="/flags/en.png" aria-label="English" w={"24px"} alt="English" rounded="100" marginRight={2} />
+						<h3>B2</h3>
+					</Button>
+					<Button p={5} rounded="md" shadow="md" display={"flex"} alignItems={"center"}>
+						<Image src="/flags/pt.png" aria-label="Portuguese" w={"24px"} alt="Portuguese" rounded="100" marginRight={2} />
+						<h3>B1</h3>
+					</Button>
+				</Box>
+			</Box>
+			<Box mt={10}>
 				<h2>Destacados</h2>
 				<SimpleGrid columns={[1, 2, 3]} spacing={6}>
 					{featuredProjects.map((project: Project) => (
