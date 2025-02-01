@@ -39,11 +39,11 @@ const theme = extendTheme({
 			},
 			accent: {
 				default: "#ff00ae",
-				_dark: "#d1008f",
+				_dark: "#CAADFF",
 			},
 			secondary: {
 				default: "#b300d1",
-				_dark: "#ff00d2",
+				_dark: "#FC97EA",
 			},
 		},
 	},
@@ -59,7 +59,7 @@ const theme = extendTheme({
 				},
 				custom2: {
 					bg: "accent",
-					color: "text",
+					color: "bg",
 					_hover: {
 						opacity: 0.8,
 					},
