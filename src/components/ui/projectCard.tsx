@@ -32,7 +32,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 
 	return (
 		<>
-			<Card p={5} rounded="md" shadow="md" variant="custom2" cursor="pointer" onClick={onOpen}>
+			<Card p={5} rounded="md" shadow="md" variant="custom" cursor="pointer" onClick={onOpen}>
 				<Image src={project.imageUrl} alt={project.name} rounded="md" mb={3} />
 				<h3>{project.name}</h3>
 				<Text>{project.shortDesc}</Text>
