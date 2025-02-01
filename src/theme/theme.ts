@@ -19,14 +19,18 @@ const theme = extendTheme({
 			},
 			cardBg: {
 				default: "#ECECEE", // gris clarito para light
-				_dark: "#2A2A2C", // gris oscuro para dark
+				_dark: "#1a1a1a", // gris oscuro para dark
+			},
+			cardBorder: {
+				default: "#1a1a1a",
+				_dark: "#2d2d2d",
 			},
 			cardColor: {
 				default: "#1A1A1A", // mismo color que "text" en light
 				_dark: "#F5F5F7", // mismo color que "text" en dark
 			},
 			panel: {
-				default: "#ffffff",
+				default: "#ECECEE",
 				_dark: "#2d2d2d",
 			},
 			text: {

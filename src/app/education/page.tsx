@@ -19,10 +19,15 @@ import {
 	useDisclosure,
 	List,
 	ListItem,
+	Flex,
+	Container,
+	CardFooter,
+	Icon,
 } from "@chakra-ui/react";
-import { Education, StackIds } from "../api/education/route";
+import { Education, StackIds, StackTechnology } from "../api/education/route";
 import { Link } from "@chakra-ui/next-js";
 import { compareTimes } from "@/utils/time";
+import { MdAccessTime } from "react-icons/md";
 
 export default function EducationPage() {
 	const [education, setEducation] = useState<Education | null>(null);
@@ -88,25 +93,64 @@ export default function EducationPage() {
 
 	// --- Helpers para mapear IDs a nombres ---
 	const mapTechIdsToNames = (techIds: string[]) => {
-		return techIds
+		const technologies: StackTechnology[] = techIds
 			.map((id) => {
-				const found = education?.stacks.find((stack) => stack.id === id);
-				return found ? found.name : id;
+				return education?.stacks.filter((stack) => !stack.isCategory).find((stack) => stack.id === id);
 			})
-			.join(", ");
+			.filter(Boolean) as StackTechnology[];
+
+		return (
+			<Text mt={2} display={"flex"} flexWrap={"wrap"} mb={6}>
+				{technologies.length !== 0 && (
+					<Text mr={2} fontFamily={"cursive"}>
+						Tecnologías:
+					</Text>
+				)}
+
+				{technologies.map((tech, idx) => (
+					<Text key={tech.id} color={tech?.color} mr={2} fontFamily={"cursive"}>
+						{tech?.name}
+						{idx !== technologies.length - 1 && ", "}
+					</Text>
+				))}
+			</Text>
+		);
 	};
 
 	// --- Función para abrir el modal con los coursesIds de un path específico ---
 	const handleOpenCoursesModal = (event: React.MouseEvent<HTMLAnchorElement>, coursesIds: string[]) => {
+		event.preventDefault();
 		setSelectedPathCourses(coursesIds);
 		onOpen();
 	};
 
+
 	if (!education) return <div>Loading...</div>;
 
 	return (
-		<div>
-			<h2>Educación</h2>
+		<Container maxW={{ base: "container.xl" }} py={8}>
+			<h1>Educación</h1>
+			<h2>Formación académica</h2>
+			<Flex mb={4} gap={4} justifyContent={"space-between"} wrap={"wrap"}>
+				<Card variant={"custom2"} p={4} w={"600px"}>
+					<Link href="https://www.iua.edu.ar/" fontWeight="bold" mb={2} color={"secondary"}>
+						Instituto Universitario Aeronáutico
+					</Link>
+					<Text>Formación Universitaria</Text>
+					<Text>Estudiante avanada en Ingeniería en Informática.</Text>
+				</Card>
+				<Card variant={"custom2"} p={4} w={"600px"}>
+					<Link href="https://www.iico.com.ar/" fontWeight="bold" mb={2} color={"secondary"}>
+						Instituto Industrial Cristo Obrero (IICO)
+					</Link>
+					<Text>Formación Secundaria</Text>
+					<Text>
+						Titulo: <strong color="accent">Tecnico mecánico.</strong>
+					</Text>
+				</Card>
+			</Flex>
+
+			<h2>Formación adicional</h2>
 
 			{/* Botones para filtrar por Categoría (isCategory == true) */}
 			<Box mb={4}>
@@ -166,63 +210,75 @@ export default function EducationPage() {
 			)}
 
 			{/* Paths */}
-			<h3>Rutas de Aprendizaje</h3>
-			{finalFilteredPaths?.map((path) => (
-				<Card key={path.name} mb={4} bg={"panel"}>
-					<CardHeader paddingBottom={3}>
-						{path.url ? (
-							<Link href={path.url} target="_blank" color={"secondary"}>
-								{path.name}
-							</Link>
-						) : (
-							<Heading size="sm">{path.name}</Heading>
-						)}
-					</CardHeader>
-					<CardBody paddingTop={0}>
-						{path.duration && <Text>Duración: {path.duration}</Text>}
-
-						{path.coursesIds.length > 0 && (
-							<Link
-								href={"#"}
-								size="sm"
-								colorScheme="blue"
-								mt={2}
-								onClick={(e) => handleOpenCoursesModal(e, path.coursesIds)}
-								color={"accent"}>
-								Ver itinerario de cursos
-							</Link>
-						)}
-
-						<Text mt={2}>Tecnologías: {mapTechIdsToNames(path.technologiesIds)}</Text>
-					</CardBody>
-				</Card>
-			))}
+			<h3 style={{ margin: "24px auto" }}>Rutas de Aprendizaje</h3>
+			<Flex flexWrap={"wrap"} gap={6} justifyContent={"center"}>
+				{finalFilteredPaths?.map((path) => {
+					return (
+						<Card key={path.name} w={600} variant={"custom"}>
+							<CardHeader paddingBottom={3}>
+								{path.duration && (
+									<Text display={"flex"} alignItems={"center"} fontFamily={"cursive"} mb={3}>
+										<Icon as={MdAccessTime} mr={2} color={"accent"}></Icon>
+										Duración: {path.duration}
+									</Text>
+								)}
+								{path.url ? (
+									<Link href={path.url} target="_blank" color={"secondary"}>
+										{path.name}
+									</Link>
+								) : (
+									<Heading size="sm">{path.name}</Heading>
+								)}
+							</CardHeader>
+							<CardBody paddingTop={0} pb={0}>
+								{mapTechIdsToNames(path.technologiesIds)}
+							</CardBody>
+							{path.coursesIds.length > 0 && (
+								<CardFooter justify={"flex-end"} pt={0}>
+									<Link
+										href={"#"}
+										size="sm"
+										colorScheme="blue"
+										onClick={(e) => handleOpenCoursesModal(e, path.coursesIds)}
+										color={"accent"}>
+										Ver itinerario &gt;
+									</Link>
+								</CardFooter>
+							)}
+						</Card>
+					);
+				})}
+			</Flex>
 
 			{/* Courses */}
-			<h3>Cursos Individuales</h3>
-			{finalFilteredCourses?.map((course) => (
-				<Card key={course.id} mb={4} bg={"panel"}>
-					<CardHeader paddingBottom={3}>
-						{course.url ? (
-							<Link href={course.url} target="_blank" color={"accent"}>
-								{course.title}
-							</Link>
-						) : (
-							<Heading size="sm">{course.title}</Heading>
-						)}
-					</CardHeader>
-					<CardBody paddingTop={0}>
-						{course.description && <Text>Descripción: {course.description}</Text>}
-						{course.duration && <Text>Duración: {course.duration}</Text>}
-						<Text>Tecnologías: {mapTechIdsToNames(course.technologiesIds)}</Text>
-						{course.url && (
-							<Text as="a" href={course.url} color="blue.500" target="_blank">
-								Ver más
-							</Text>
-						)}
-					</CardBody>
-				</Card>
-			))}
+			<h3 style={{ margin: "24px auto" }}>Cursos Individuales</h3>
+			<Flex flexWrap={"wrap"} gap={6} justifyContent={"center"}>
+				{finalFilteredCourses?.map((course) => {
+					return (
+						<Card key={course.id} variant={"custom"} w={600}>
+							<CardHeader paddingBottom={3}>
+								{course.duration && (
+									<Text display={"flex"} alignItems={"center"} fontFamily={"cursive"} mb={3}>
+										<Icon as={MdAccessTime} mr={2} color={"accent"}></Icon>
+										Duración: {course.duration}
+									</Text>
+								)}
+								{course.url ? (
+									<Link href={course.url} target="_blank" color={"accent"}>
+										{course.title}
+									</Link>
+								) : (
+									<Heading size="sm">{course.title}</Heading>
+								)}
+							</CardHeader>
+							<CardBody paddingTop={0}>
+								{course.description && <Text>Descripción: {course.description}</Text>}
+								{mapTechIdsToNames(course.technologiesIds)}
+							</CardBody>
+						</Card>
+					);
+				})}
+			</Flex>
 
 			{/* Modal para mostrar los cursos de la ruta seleccionada */}
 			<Modal isOpen={isOpen} onClose={onClose}>
@@ -254,7 +310,7 @@ export default function EducationPage() {
 
 										{course.description && <Text fontSize="sm">Descripción: {course.description}</Text>}
 										{course.duration && <Text fontSize="sm">Duración: {course.duration}</Text>}
-										<Text fontSize="sm">Tecnologías: {mapTechIdsToNames(course.technologiesIds)}</Text>
+										{mapTechIdsToNames(course.technologiesIds)}
 									</ListItem>
 								);
 							})}
@@ -262,6 +318,6 @@ export default function EducationPage() {
 					</ModalBody>
 				</ModalContent>
 			</Modal>
-		</div>
+		</Container>
 	);
 }
