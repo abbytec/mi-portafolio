@@ -47,7 +47,7 @@ export default function Contact() {
 					tecnología.
 				</Text>
 				<Link href="https://discord.gg/vShXpyWTTq" isExternal>
-					<Button leftIcon={<Icon as={FaDiscord} />} background={"accent"}>
+					<Button leftIcon={<Icon as={FaDiscord} />} variant={"custom2"}>
 						Unirse al Servidor
 					</Button>
 				</Link>

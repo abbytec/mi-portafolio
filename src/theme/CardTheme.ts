@@ -11,11 +11,7 @@ const customVariant = definePartsStyle({
 		border: "1px solid var(--chakra-colors-cardBorder)",
 		_hover: {
 			border: "1px solid var(--chakra-colors-accent)",
-			bg: "accent",
-			color: "text",
-			"*": {
-				color: "text!important",
-			},
+			background: "var(--chakra-colors-cardBg)",
 		},
 	},
 });

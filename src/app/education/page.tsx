@@ -285,7 +285,7 @@ export default function EducationPage() {
 				<ModalContent bg="panel">
 					<ModalHeader>Cursos de la Ruta</ModalHeader>
 					<ModalCloseButton />
-					<ModalBody>
+					<ModalBody background={"cardBg"}>
 						<List spacing={2}>
 							{selectedPathCourses.map((courseId, i) => {
 								// Obtenemos el curso completo
