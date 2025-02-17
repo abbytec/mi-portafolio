@@ -20,7 +20,7 @@ interface Course {
 	individual: boolean;
 	title: string;
 	description?: string;
-	duration: string;
+	duration?: string;
 	url?: string;
 	technologiesIds: StackIds[]; // IDs de stacks
 }
@@ -148,7 +148,7 @@ const jsonData: Education = {
 		{
 			name: "Conviértete en especialista en desarrollo JavaScript (LinkedIn)",
 			duration: "18h",
-			coursesIds: ["javascript-1"],
+			coursesIds: ["javascript-5", "javascript-6", "javascript-7", "javascript-1", "javascript-2", "javascript-3", "javascript-4"],
 			url: "https://www.linkedin.com/learning/paths/conviertete-en-especialista-en-desarrollo-javascript?originalSubdomain=es",
 			technologiesIds: ["desarrollo-web", "javascript"],
 		},
@@ -175,12 +175,6 @@ const jsonData: Education = {
 			technologiesIds: ["desarrollo-software", "java"],
 		},
 		{
-			name: "JAVA Course (Sololearn)",
-			coursesIds: [],
-			url: "https://www.sololearn.com/en/learn/courses/le-java",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
 			name: "Introducción | Formación en Datos e Inteligencia Artificial (Secretaría de Economía del Conocimiento) - 50h",
 			coursesIds: [],
 			url: "",
@@ -192,12 +186,6 @@ const jsonData: Education = {
 			coursesIds: [],
 			url: "https://www.linkedin.com/learning/paths/develop-your-nosql-skills",
 			technologiesIds: ["ciencia-de-datos", "mongodb", "redis", "couchbase", "elasticsearch", "neo4j"],
-		},
-		{
-			name: "SQL Course (Sololearn)",
-			coursesIds: [],
-			url: "https://www.sololearn.com/en/learn/courses/le-sql",
-			technologiesIds: ["ciencia-de-datos", "mysql"],
 		},
 
 		{
@@ -366,6 +354,14 @@ const jsonData: Education = {
 			technologiesIds: ["nodejs"],
 		},
 		{
+			id: "web-1",
+			individual: true,
+			title: "Desarrollo de proyectos web avanzado",
+			duration: "2h 24min",
+			url: "https://www.linkedin.com/learning/desarrollo-de-proyectos-web-avanzado/",
+			technologiesIds: ["desarrollo-web", "ui-ux", "git"],
+		},
+		{
 			id: "node-4",
 			individual: false,
 			title: "Node.js avanzado",
@@ -436,6 +432,22 @@ const jsonData: Education = {
 			duration: "2h 14min",
 			url: "https://www.linkedin.com/learning/javascript-tdd-y-pruebas-unitarias-esencial/",
 			technologiesIds: ["javascript"],
+		},
+		{
+			id: "javascript-7",
+			individual: false,
+			title: "JavaScript: Programación orientada a objetos",
+			duration: "2h 2min",
+			url: "https://www.linkedin.com/learning/javascript-programacion-orientada-a-objetos/",
+			technologiesIds: ["javascript"],
+		},
+		{
+			id: "tests-1",
+			individual: true,
+			title: "End-to-End JavaScript Testing with Cypress.io (2019)",
+			duration: "1h 29min",
+			url: "https://www.linkedin.com/learning/end-to-end-javascript-testing-with-cypress-io-2019/",
+			technologiesIds: ["desarrollo-web", "javascript"],
 		},
 		{
 			id: "frontend-1",
@@ -558,14 +570,6 @@ const jsonData: Education = {
 			technologiesIds: ["html-css"],
 		},
 		{
-			id: "javascript-1",
-			individual: false,
-			title: "JavaScript esencial (2017)",
-			duration: "5h 27min",
-			url: "https://www.linkedin.com/learning/javascript-esencial/",
-			technologiesIds: ["javascript"],
-		},
-		{
 			id: "css-3",
 			individual: false,
 			title: "CSS con SASS escencial",
@@ -579,6 +583,22 @@ const jsonData: Education = {
 			title: "React esencial (2019)",
 			duration: "2h 48min",
 			url: "https://www.linkedin.com/learning/react-esencial-2019/",
+			technologiesIds: ["reactjs"],
+		},
+		{
+			id: "react-2",
+			individual: true,
+			title: "React Hooks esencial",
+			duration: "2h 46min",
+			url: "https://www.linkedin.com/learning/react-hooks-esencial/",
+			technologiesIds: ["desarrollo-web", "reactjs"],
+		},
+		{
+			id: "react-3",
+			individual: true,
+			title: "React avanzado 1",
+			duration: "2h 12min",
+			url: "https://www.linkedin.com/learning/react-avanzado-1/",
 			technologiesIds: ["reactjs"],
 		},
 		{
@@ -598,12 +618,44 @@ const jsonData: Education = {
 			technologiesIds: ["typescript"],
 		},
 		{
+			id: "typescript-2",
+			individual: true,
+			title: "TypeScript avanzado",
+			duration: "2h 45min",
+			url: "https://www.linkedin.com/learning/typescript-avanzado/",
+			technologiesIds: ["typescript"],
+		},
+		{
 			id: "vue-1",
 			individual: false,
 			title: "Vue.js esencial (2019)",
 			duration: "3h 37min",
 			url: "https://www.linkedin.com/learning/vue-js-esencial-2019/",
 			technologiesIds: ["vuejs"],
+		},
+		{
+			id: "vue-2",
+			individual: true,
+			title: "Vue avanzado 1",
+			duration: "1h 55min",
+			url: "https://www.linkedin.com/learning/vue-avanzado-1/",
+			technologiesIds: ["vuejs"],
+		},
+		{
+			id: "vue-3",
+			individual: true,
+			title: "Vue avanzado 2",
+			duration: "2h 25min",
+			url: "https://www.linkedin.com/learning/vue-avanzado-2/",
+			technologiesIds: ["desarrollo-web", "vuejs"],
+		},
+		{
+			id: "vue-4",
+			individual: true,
+			title: "Learning Nuxt.js",
+			duration: "1h 32min",
+			url: "https://www.linkedin.com/learning/learning-nuxt-js/",
+			technologiesIds: ["desarrollo-web", "vuejs", "nuxtjs"],
 		},
 		{
 			id: "scrum-1",
@@ -660,6 +712,81 @@ const jsonData: Education = {
 			duration: "3h 6min",
 			url: "https://www.linkedin.com/learning/angular-practico-desarrolla-una-aplicacion-web-para-gestion-deportiva/",
 			technologiesIds: ["angular"],
+		},
+		{
+			id: "java-1",
+			title: "JAVA Course (Sololearn)",
+			individual: true,
+			url: "https://www.sololearn.com/en/learn/courses/le-java",
+			technologiesIds: ["desarrollo-software", "java"],
+		},
+		{
+			id: "sql-1",
+			title: "SQL Course (Sololearn)",
+			individual: true,
+			url: "https://www.sololearn.com/en/learn/courses/le-sql",
+			technologiesIds: ["ciencia-de-datos", "mysql"],
+		},
+		{
+			id: "sql-2",
+			title: "PostgreSQL esencial",
+			individual: true,
+			url: "https://www.linkedin.com/learning/postgresql-esencial-2/",
+			technologiesIds: ["ciencia-de-datos", "postgresql"],
+		},
+		{
+			id: "cpp-1",
+			title: "C Course (Sololearn)",
+			individual: true,
+			url: "https://www.sololearn.com/en/learn/courses/le-c",
+			technologiesIds: ["desarrollo-software", "c-plus-plus"],
+		},
+		{
+			id: "cpp-2",
+			title: "C++ Course (Sololearn)",
+			individual: true,
+			url: "https://www.sololearn.com/en/learn/courses/le-c-plus-plus",
+			technologiesIds: ["desarrollo-software", "c-plus-plus"],
+		},
+		{
+			id: "flutter-1",
+			title: "Flutter: Part 01 Introduction",
+			individual: true,
+			url: "https://www.linkedin.com/learning/flutter-part-01-introduction/",
+			duration: "1h 33min",
+			technologiesIds: ["desarrollo-movil", "flutter"],
+		},
+		{
+			id: "flutter-2",
+			title: "Flutter: Part 02 Building Apps",
+			individual: true,
+			url: "https://www.linkedin.com/learning/flutter-part-02-building-apps/",
+			duration: "1h 23min",
+			technologiesIds: ["desarrollo-movil", "flutter"],
+		},
+		{
+			id: "flutter-3",
+			title: "Flutter: Part 03 Flutter Widgets",
+			individual: true,
+			url: "https://www.linkedin.com/learning/flutter-part-03-flutter-widgets/",
+			duration: "1h 30min",
+			technologiesIds: ["desarrollo-movil", "flutter"],
+		},
+		{
+			id: "flutter-4",
+			title: "Flutter: Part 04 Building an App with State",
+			individual: true,
+			url: "https://www.linkedin.com/learning/flutter-part-04-building-an-app-with-state/",
+			duration: "1h 38min",
+			technologiesIds: ["desarrollo-movil", "flutter"],
+		},
+		{
+			id: "flutter-5",
+			title: "Flutter: Part 05 Flutter and Dart Packages",
+			individual: true,
+			url: "https://www.linkedin.com/learning/flutter-part-05-flutter-and-dart-packages/",
+			duration: "1h 26min",
+			technologiesIds: ["desarrollo-movil", "flutter"],
 		},
 	],
 };

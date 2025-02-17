@@ -102,7 +102,7 @@ export default function Home() {
 				</Text>
 			</Box>
 			<Box mt={10}>
-				<h2>Idiomas</h2>
+				<h2>Idiomas que hablo</h2>
 				<Box display={"flex"} gap={4}>
 					<Button p={5} rounded="md" shadow="md" display={"flex"} alignItems={"center"}>
 						<Image src="/flags/es.png" aria-label="Spanish" w={"24px"} alt="Spanish" rounded="100" marginRight={2} />
