@@ -21,11 +21,12 @@ import {
 import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
-import useSound from "@/hooks/useClickSound";
+import { usePreLoadAudio, useSound } from "@/hooks/useClickSound";
 
 export default function Header() {
 	const { colorMode, toggleColorMode } = useColorMode();
-	const playClickSound = useSound("/sounds/click.wav");
+	const clickSound = usePreLoadAudio("/sounds/click.wav");
+	const playClickSound = useSound(clickSound);
 	const pathname = usePathname();
 
 	// Manejar abrir/cerrar el Drawer
