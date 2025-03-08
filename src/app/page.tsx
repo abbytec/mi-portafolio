@@ -30,7 +30,6 @@ export default function Home() {
 			try {
 				const response = await fetch("/api/projects");
 				const data = await response.json();
-				// Si tu endpoint es { projects: [...] }, ajusta aquí
 				const featured = data.projects.filter((p: Project) => p.featured);
 				setFeaturedProjects(featured);
 			} catch (error) {
@@ -66,7 +65,11 @@ export default function Home() {
 				<VStack spacing={6} textAlign="center">
 					<h1 style={{ fontWeight: "bold" }}>¡Hola! Me llamo Abigaíl</h1>
 					<Text fontSize="xl">Soy una desarrolladora Full Stack enfocada en crear experiencias innovadoras.</Text>
-					<Text fontSize="md" marginRight={"auto"} style={{ color: "var(--chakra-colors-accent" }}>
+					<Text
+						display={{ base: "none", md: "block" }}
+						fontSize="md"
+						marginRight={"auto"}
+						style={{ color: "var(--chakra-colors-accent" }}>
 						&lt;&lt;----- Click en la imagen para ampliarla.
 					</Text>
 				</VStack>
@@ -118,14 +121,16 @@ export default function Home() {
 					</Button>
 				</Box>
 			</Box>
-			<Box mt={10}>
-				<h2>Destacados</h2>
-				<SimpleGrid columns={[1, 2, 3]} spacing={6}>
-					{featuredProjects.map((project: Project) => (
-						<ProjectCard key={project.name} project={project} />
-					))}
-				</SimpleGrid>
-			</Box>
+			{process.env.TOGGLE_PROJECTS === "true" && (
+				<Box mt={10}>
+					<h2>Destacados</h2>
+					<SimpleGrid columns={[1, 2, 3]} spacing={6}>
+						{featuredProjects.map((project: Project) => (
+							<ProjectCard key={project.name} project={project} />
+						))}
+					</SimpleGrid>
+				</Box>
+			)}
 		</Container>
 	);
 }
