@@ -1,11 +1,16 @@
 // hooks/useSound.ts
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 
-const useSound = (url: string) => {
+const useSound = (url: string, volume = 0.5) => {
+	const audio = useMemo(() => {
+		const sound = new Audio(url);
+		sound.volume = volume;
+		return sound;
+	}, [url, volume]);
+
 	return useCallback(() => {
-		const audio = new Audio(url);
+		audio.currentTime = 0; // reinicia el sonido si lo llamas varias veces
 		audio.play();
-	}, [url]);
+	}, [audio]);
 };
-
 export default useSound;
