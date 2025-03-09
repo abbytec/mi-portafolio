@@ -55,6 +55,7 @@ export type StackIds =
 	| "loopback-4"
 	| "electron"
 	| "java"
+	| "spring"
 	| "c-plus-plus"
 	| "python"
 	| "c-sharp"
@@ -170,7 +171,7 @@ const jsonData: Education = {
 		{
 			name: "Getting Started as a Java Developer (LinkedIn)",
 			duration: "19h",
-			coursesIds: [],
+			coursesIds: ["java-2", "java-3", "java-spring-1", "java-4", "java-5", "java-6", "java-7", "java-8", "java-9", "java-10"],
 			url: "https://www.linkedin.com/learning/paths/getting-started-as-a-java-developer",
 			technologiesIds: ["desarrollo-software", "java"],
 		},
@@ -227,6 +228,7 @@ const jsonData: Education = {
 		{ id: "desarrollo-web", name: "Desarrollo Web", isCategory: true, color: "#3498db" },
 		{ id: "desarrollo-software", name: "Desarrollo de Software", isCategory: true, color: "#2ecc71" },
 		{ id: "java", name: "Java", color: "#b07219" },
+		{ id: "spring", name: "Spring", color: "#6db33f" },
 		{ id: "python", name: "Python", color: "#306998" },
 
 		{ id: "nodejs", name: "NodeJS", color: "#68a063" },
@@ -718,6 +720,86 @@ const jsonData: Education = {
 			title: "JAVA Course (Sololearn)",
 			individual: true,
 			url: "https://www.sololearn.com/en/learn/courses/le-java",
+			technologiesIds: ["desarrollo-software", "java"],
+		},
+		{
+			id: "java-2",
+			title: "Java Essential Training: Syntax and Structure",
+			individual: false,
+			duration: "2h 28min",
+			url: "https://www.linkedin.com/learning/java-essential-training-syntax-and-structure-16025610/",
+			technologiesIds: ["desarrollo-software", "java"],
+		},
+		{
+			id: "java-3",
+			title: "Java Essential Training: Objects and APIs",
+			individual: false,
+			duration: "2h 10min",
+			url: "https://www.linkedin.com/learning/java-essential-training-objects-and-apis-16021820/",
+			technologiesIds: ["desarrollo-software", "java"],
+		},
+		{
+			id: "java-spring-1",
+			title: "Learning Spring with Spring Boot",
+			individual: false,
+			duration: "2h 13min",
+			url: "https://www.linkedin.com/learning/learning-spring-with-spring-boot-13886371/",
+			technologiesIds: ["desarrollo-software", "java", "spring"],
+		},
+		{
+			id: "java-4",
+			title: "Learning JDBC (2019)",
+			individual: false,
+			duration: "2h 12min",
+			url: "https://www.linkedin.com/learning/learning-jdbc-2019/",
+			technologiesIds: ["desarrollo-software", "java", "mysql"],
+		},
+		{
+			id: "java-5",
+			title: "Learning Java Collections",
+			individual: false,
+			duration: "3h 10min",
+			url: "https://www.linkedin.com/learning/learning-java-collections/j",
+			technologiesIds: ["desarrollo-software", "java"],
+		},
+		{
+			id: "java-6",
+			title: "Java Memory Management: Values and References",
+			individual: false,
+			duration: "1h 15min",
+			url: "https://www.linkedin.com/learning/java-memory-management-values-and-references/",
+			technologiesIds: ["desarrollo-software", "java"],
+		},
+		{
+			id: "java-7",
+			title: "Java Memory Management: Garbage Collection, JVM Tuning, and Spotting Memory Leaks",
+			individual: false,
+			duration: "1h 10min",
+			url: "https://www.linkedin.com/learning/java-memory-management-garbage-collection-jvm-tuning-and-spotting-memory-leaks/",
+			technologiesIds: ["desarrollo-software", "java"],
+		},
+		{
+			id: "java-8",
+			title: "Java Exception Handling",
+			individual: false,
+			duration: "1h 10min",
+			url: "https://www.linkedin.com/learning/java-exception-handling/",
+			technologiesIds: ["desarrollo-software", "java"],
+		},
+		{
+			id: "java-9",
+			title: "Java Algorithms",
+			individual: false,
+			duration: "2h 37min",
+			url: "https://www.linkedin.com/learning/java-algorithms/",
+			technologiesIds: ["desarrollo-software", "java"],
+		},
+		{
+			id: "java-10",
+			title: "Java: Data Structures",
+			individual: false,
+			duration: "49min",
+			url: "https://www.linkedin.com/learning/java-data-structures-14403471/",
 			technologiesIds: ["desarrollo-software", "java"],
 		},
 		{
