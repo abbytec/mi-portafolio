@@ -17,8 +17,10 @@ import {
 	useDisclosure,
 	ModalCloseButton,
 	Button,
+	Icon,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { FaSearch } from "react-icons/fa";
 
 export default function Home() {
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -49,8 +51,20 @@ export default function Home() {
 					rounded="lg"
 					cursor="pointer"
 					mx={{ base: "auto", md: "0" }} // Centrado horizontal en móvil
+					position="relative"
 					onClick={onOpen}>
 					<Image src="/pfp.jpg" alt="Mi Foto" objectFit="cover" w="100%" h="100%" />
+					<Icon
+						as={FaSearch}
+						position="absolute"
+						top="8px"
+						right="8px"
+						boxSize={6}
+						color="gray.100"
+						bg="rgba(0, 0, 0, 0.6)"
+						p={1}
+						rounded="full"
+					/>
 				</Box>
 				{/* Modal con la imagen grande */}
 				<Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
@@ -64,44 +78,48 @@ export default function Home() {
 				</Modal>
 				<VStack spacing={6} textAlign="center">
 					<h1 style={{ fontWeight: "bold" }}>¡Hola! Me llamo Abigaíl</h1>
-					<Text fontSize="xl">Soy una desarrolladora Full Stack enfocada en crear experiencias innovadoras.</Text>
+					<Text fontSize="xl">Soy una desarrolladora Full Stack enfocada en crear soluciones de software innovadoras.</Text>
 					<Text
 						display={{ base: "none", md: "block" }}
 						fontSize="md"
 						marginRight={"auto"}
 						style={{ color: "var(--chakra-colors-accent" }}>
-						&lt;&lt;----- Click en la imagen para ampliarla.
+						Gracias por pasarte por aqui!
 					</Text>
 				</VStack>
 			</Stack>
 
 			<Box mt={10}>
 				<h2>Acerca de mí</h2>
-				<Text mb={4}>
+				<Text mb={4} lineHeight={"1.8"} style={{ textIndent: "2em" }}>
 					Programadora autodidacta desde temprana edad, interesada en ampliar mis experiencias en el ámbito del software a nivel
-					empresarial.
+					empresarial. A veces doy tutorías, fomentando el aprendizaje continuo. Disfruto de generar nuevas ideas y trabajar en equipo
+					para concretarlas.
 				</Text>
-				<Text mb={4}>
+				<Text mb={4} lineHeight={"1.8"} style={{ textIndent: "2em" }}>
 					Fuera del horario laboral, formo parte del STAFF de{" "}
 					<Link href="https://discord.com/invite/programacion">
 						<strong>Programadores y Estudiantes</strong>
 					</Link>
-					, una comunidad de Discord con más de 80 mil usuarios y top 5 global en educación.
+					, una comunidad de Discord con más de 80 mil usuarios y top 5 global en educación en la plataforma. Donde se realizan
+					talleres, y se proporciona un espacio para que nuestros usuarios puedan ayudarse mutuamente.
 				</Text>
-				<Text mb={4}>
-					También soy secretaria en{" "}
+				<Text mb={4} lineHeight={"1.8"} style={{ textIndent: "2em" }}>
+					Soy secretaria en{" "}
 					<Link href="https://www.instagram.com/rotaractvillacarlospaz/">
 						<strong>Rotaract Club Villa Carlos Paz</strong>
 					</Link>
-					, ONG dedicada al liderazgo, compañerismo, servicio a la comunidad e internacionalización.
+					, ONG dedicada al servicio a la comunidad, liderazgo, compañerismo e internacionalización. Hemos organizado eventos de
+					capacitación presenciales para clubes de diferentes localidades del país, obteniendo reconocimiento de la legislatura de la
+					Provincia de Cordoba.
 				</Text>
-				<Text mb={4}>
-					Programo diversos softwares y/o doy tutorías, fomentando el aprendizaje continuo. Disfruto de generar nuevas ideas y trabajar
-					en equipo para concretarlas.
-				</Text>
-				<Text>
-					<b>Principal valor:</b> Me adapto rápido a nuevos desafíos, tecnologías y códigos, logrando solucionar toda tarea en tiempo y
-					forma.
+				<Text lineHeight={"1.8"}>
+					<b style={{ color: "var(--chakra-colors-secondary)" }}>Fortalezas y debilidades:</b>&ensp;Tengo Trastorno de Deficit de
+					Atención e Hiperactividad diagnosticado, por lo que para evitar perder la concentración, suelo realizar un esfuerzo extra a
+					la hora de organizar (detalladamente) mis tareas o espacio de trabajo mediante notas en papel u archivos de texto.
+					<br />A la hora de programar, suelo entrar en <b>hiperfoco</b> (un momento donde se concentra toda esa actividad neuronal en
+					una tarea específica). Esto me permite resolver tareas dificiles para la mayoría de mis compañeros, obteniendo así con
+					frecuencia su reconocimiento.
 				</Text>
 			</Box>
 			<Box mt={10}>
