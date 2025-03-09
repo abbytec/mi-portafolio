@@ -117,9 +117,9 @@ export default function Home() {
 					<b style={{ color: "var(--chakra-colors-secondary)" }}>Fortalezas y debilidades:</b>&ensp;Tengo Trastorno de Deficit de
 					Atención e Hiperactividad diagnosticado, por lo que para evitar perder la concentración, suelo realizar un esfuerzo extra a
 					la hora de organizar (detalladamente) mis tareas o espacio de trabajo mediante notas en papel u archivos de texto.
-					<br />A la hora de programar, suelo entrar en <b>hiperfoco</b> (un momento donde se concentra toda esa actividad neuronal en
-					una tarea específica). Esto me permite resolver tareas dificiles para la mayoría de mis compañeros, obteniendo así con
-					frecuencia su reconocimiento.
+					<br />A la hora de programar, con frecuencia entro en <b>hiperfoco</b> (un momento donde se concentra toda esa actividad
+					neuronal en una tarea específica). Esto me permite resolver tareas dificiles para la mayoría de mis compañeros, obteniendo
+					así con frecuencia su reconocimiento.
 				</Text>
 			</Box>
 			<Box mt={10}>
