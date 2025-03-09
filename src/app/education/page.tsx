@@ -136,7 +136,9 @@ export default function EducationPage() {
 						Instituto Universitario Aeronáutico
 					</Link>
 					<Text>Formación Universitaria</Text>
-					<Text>Estudiante avanada en Ingeniería en Informática.</Text>
+					<Text>
+						Estudiante avanada en <strong color="accent">Ingeniería en Informática.</strong>
+					</Text>
 				</Card>
 				<Card variant={"custom"} p={4} w={"600px"}>
 					<Link href="https://www.iico.com.ar/" fontWeight="bold" mb={2} color={"secondary"}>

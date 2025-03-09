@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+	env: {
+		TOGGLE_PROJECTS: JSON.stringify(process.env.NODE_ENV === "development"),
+	},
 };
 
 export default nextConfig;

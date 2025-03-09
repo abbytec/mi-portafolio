@@ -1,11 +1,23 @@
 // hooks/useSound.ts
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 
-const useSound = (url: string) => {
-	return useCallback(() => {
-		const audio = new Audio(url);
-		audio.play();
-	}, [url]);
+export const usePreLoadAudio = (url: string, volume = 0.4) => {
+	const [audio, setAudio] = useState<HTMLAudioElement>();
+	useEffect(() => {
+		if (!url || typeof window === "undefined") return;
+
+		const sound = new Audio(url);
+		sound.volume = volume;
+		setAudio(sound);
+	}, [url, volume]);
+
+	return audio;
 };
 
-export default useSound;
+export const useSound = (audio?: HTMLAudioElement) => {
+	return useCallback(() => {
+		if (!audio) return;
+		audio.currentTime = 0; // reinicia el sonido si lo llamas varias veces
+		audio.play();
+	}, [audio]);
+};

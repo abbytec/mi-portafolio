@@ -5,7 +5,7 @@ import { CardTheme } from "./CardTheme";
 import { ModalTheme } from "./ModalTheme";
 
 const config: ThemeConfig = {
-	initialColorMode: "light",
+	initialColorMode: "system",
 	useSystemColorMode: false,
 };
 
