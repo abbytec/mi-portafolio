@@ -12,11 +12,14 @@ export default function Contact() {
 			<Box>
 				<h2>Redes Sociales</h2>
 				<HStack spacing={4} wrap={"wrap"} my={4}>
-					<Link href="https://wa.me/+5493541209175" isExternal>
-						<Button leftIcon={<Icon as={FaWhatsapp} />} colorScheme="green" variant="outline">
-							WhatsApp
-						</Button>
-					</Link>
+					{process.env.ANTI_DOXXING_POLICY === "true" && (
+						<Link href="https://wa.me/+5493541209175" isExternal>
+							<Button leftIcon={<Icon as={FaWhatsapp} />} colorScheme="green" variant="outline">
+								WhatsApp
+							</Button>
+						</Link>
+					)}
+
 					<Link href="https://www.instagram.com/abbytec_hd" isExternal>
 						<Button leftIcon={<Icon as={FaInstagram} />} colorScheme="pink" variant="outline">
 							Instagram
@@ -41,10 +44,26 @@ export default function Contact() {
 			</Box>
 
 			<Box py={4}>
-				<h3>Servidor de Discord</h3>
+				<h3>Servidores de Discord</h3>
 				<Text mb={4}>
-					Únete a mi servidor de Discord para conectarte con la comunidad, recibir soporte y participar en charlas sobre desarrollo y
-					tecnología.
+					Únete a{" "}
+					<Link href="https://discord.gg/programacion">
+						<strong>Programadores y Estudiantes</strong>
+					</Link>
+					, una comunidad abierta de programadores y estudiantes de todo el mundo.
+				</Text>
+				<Link href="https://discord.gg/programacion" isExternal>
+					<Button leftIcon={<Icon as={FaDiscord} />} colorScheme="blue">
+						Unirse al Servidor
+					</Button>
+				</Link>
+				<Text mb={4} mt={6}>
+					Únete a{" "}
+					<Link href="https://discord.gg/vShXpyWTTq">
+						<strong>Abby&apos;s Digital Cafe</strong>
+					</Link>
+					, mi servidor personal de Discord para charlas mas informales, actividades recreativas, recibir soporte o ayuda en
+					programación y participar en eventos que fomenten el networking.
 				</Text>
 				<Link href="https://discord.gg/vShXpyWTTq" isExternal>
 					<Button leftIcon={<Icon as={FaDiscord} />} variant={"custom2"}>
@@ -62,12 +81,15 @@ export default function Contact() {
 							gpsmurfs@gmail.com
 						</Link>
 					</Text>
-					<Text>
-						Teléfono:{" "}
-						<Link href="tel:+5493541209175" color="accent">
-							+54 9 3541 209175
-						</Link>
-					</Text>
+					{process.env.ANTI_DOXXING_POLICY === "true" && (
+						<Text>
+							Teléfono:{" "}
+							<Link href="tel:+5493541209175" color="accent">
+								+54 9 3541 209175
+							</Link>
+						</Text>
+					)}
+
 					<Text>Ubicación: Argentina - Cordoba</Text>
 				</VStack>
 			</Box>
