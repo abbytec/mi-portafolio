@@ -98,6 +98,7 @@ const theme = extendTheme({
 			h2: {
 				fontSize: "48px",
 				fontFamily: "var(--font-caveat), cursive",
+				textAlign: { base: "center", md: "left" },
 			},
 			h3: {
 				fontSize: "32px",
