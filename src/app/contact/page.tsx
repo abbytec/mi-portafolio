@@ -9,9 +9,9 @@ export default function Contact() {
 	return (
 		<Container maxW={{ base: "container.xl" }} py={8}>
 			<h1>Contacto</h1>
-			<Box>
+			<Box py={4}>
 				<h2>Redes Sociales</h2>
-				<HStack spacing={4} wrap={"wrap"} my={4}>
+				<HStack spacing={4} wrap={"wrap"} my={4} justifyContent={{ base: "center", md: "flex-start" }}>
 					{process.env.ANTI_DOXXING_POLICY === "true" && (
 						<Link href="https://wa.me/+5493541209175" isExternal>
 							<Button leftIcon={<Icon as={FaWhatsapp} />} colorScheme="green" variant="outline">
@@ -44,7 +44,7 @@ export default function Contact() {
 			</Box>
 
 			<Box py={4}>
-				<h3>Servidores de Discord</h3>
+				<h2>Servidores de Discord</h2>
 				<Text mb={4}>
 					Únete a{" "}
 					<Link href="https://discord.gg/programacion">
