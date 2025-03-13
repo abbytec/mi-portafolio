@@ -70,6 +70,7 @@ export default function Header() {
 				display={{ base: "flex", md: "none" }}
 				onClick={onOpen}
 				mr={2}
+				title="Abrir menú"
 			/>
 
 			{/* Drawer a pantalla completa para mostrar el menú en móviles */}
@@ -118,6 +119,7 @@ export default function Header() {
 				icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
 				onClick={toggleColorMode}
 				variant="custom"
+				title={colorMode === "light" ? "Modo Oscuro" : "Modo Claro"}
 			/>
 		</Flex>
 	);

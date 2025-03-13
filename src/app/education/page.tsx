@@ -47,6 +47,7 @@ export default function EducationPage() {
 			const res = await fetch("/api/education");
 			const data: Education = await res.json();
 			data.paths = data.paths.toSorted((a, b) => compareTimes(a.duration, b.duration));
+			data.courses = data.courses.toSorted((a, b) => compareTimes(a.duration, b.duration));
 			setEducation(data);
 		};
 		fetchData();
@@ -125,6 +126,8 @@ export default function EducationPage() {
 	};
 
 	if (!education) return <div>Loading...</div>;
+
+	console.log(finalFilteredPaths);
 
 	return (
 		<Container maxW={{ base: "container.xl" }} py={8}>
@@ -211,75 +214,83 @@ export default function EducationPage() {
 			)}
 
 			{/* Paths */}
-			<h3 style={{ margin: "24px auto" }}>Rutas de Aprendizaje</h3>
-			<Flex flexWrap={"wrap"} gap={6} justifyContent={"center"}>
-				{finalFilteredPaths?.map((path) => {
-					return (
-						<Card key={path.name} w={600} variant={"custom"}>
-							<CardHeader paddingBottom={3}>
-								{path.duration && (
-									<Text display={"flex"} alignItems={"center"} fontFamily={"cursive"} mb={3}>
-										<Icon as={MdAccessTime} mr={2} color={"accent"}></Icon>
-										Duración: {path.duration}
-									</Text>
-								)}
-								{path.url ? (
-									<Link href={path.url} target="_blank" color={"secondary"}>
-										{path.name}
-									</Link>
-								) : (
-									<Heading size="sm">{path.name}</Heading>
-								)}
-							</CardHeader>
-							<CardBody paddingTop={0} pb={0}>
-								{mapTechIdsToNames(path.technologiesIds)}
-							</CardBody>
-							{path.coursesIds.length > 0 && (
-								<CardFooter justify={"flex-end"} pt={0}>
-									<Link
-										href={"#"}
-										size="sm"
-										colorScheme="blue"
-										onClick={(e) => handleOpenCoursesModal(e, path.coursesIds)}
-										color={"accent"}>
-										Ver itinerario &gt;
-									</Link>
-								</CardFooter>
-							)}
-						</Card>
-					);
-				})}
-			</Flex>
+			{finalFilteredPaths?.length !== 0 && (
+				<>
+					<h3 style={{ margin: "24px auto" }}>Rutas de Aprendizaje</h3>
+					<Flex flexWrap={"wrap"} gap={6} justifyContent={"center"}>
+						{finalFilteredPaths?.map((path) => {
+							return (
+								<Card key={path.name} w={600} variant={"custom"}>
+									<CardHeader paddingBottom={3}>
+										{path.duration && (
+											<Text display={"flex"} alignItems={"center"} fontFamily={"cursive"} mb={3}>
+												<Icon as={MdAccessTime} mr={2} color={"accent"}></Icon>
+												Duración: {path.duration}
+											</Text>
+										)}
+										{path.url ? (
+											<Link href={path.url} target="_blank" color={"secondary"}>
+												{path.name}
+											</Link>
+										) : (
+											<Heading size="sm">{path.name}</Heading>
+										)}
+									</CardHeader>
+									<CardBody paddingTop={0} pb={0}>
+										{mapTechIdsToNames(path.technologiesIds)}
+									</CardBody>
+									{path.coursesIds.length > 0 && (
+										<CardFooter justify={"flex-end"} pt={0}>
+											<Link
+												href={"#"}
+												size="sm"
+												colorScheme="blue"
+												onClick={(e) => handleOpenCoursesModal(e, path.coursesIds)}
+												color={"accent"}>
+												Ver itinerario &gt;
+											</Link>
+										</CardFooter>
+									)}
+								</Card>
+							);
+						})}
+					</Flex>
+				</>
+			)}
 
 			{/* Courses */}
-			<h3 style={{ margin: "24px auto" }}>Cursos Individuales</h3>
-			<Flex flexWrap={"wrap"} gap={6} justifyContent={"center"}>
-				{finalFilteredCourses?.map((course) => {
-					return (
-						<Card key={course.id} variant={"custom"} w={600}>
-							<CardHeader paddingBottom={3}>
-								{course.duration && (
-									<Text display={"flex"} alignItems={"center"} fontFamily={"cursive"} mb={3}>
-										<Icon as={MdAccessTime} mr={2} color={"accent"}></Icon>
-										Duración: {course.duration}
-									</Text>
-								)}
-								{course.url ? (
-									<Link href={course.url} target="_blank" color={"accent"}>
-										{course.title}
-									</Link>
-								) : (
-									<Heading size="sm">{course.title}</Heading>
-								)}
-							</CardHeader>
-							<CardBody paddingTop={0}>
-								{course.description && <Text>Descripción: {course.description}</Text>}
-								{mapTechIdsToNames(course.technologiesIds)}
-							</CardBody>
-						</Card>
-					);
-				})}
-			</Flex>
+			{finalFilteredCourses?.length !== 0 && (
+				<>
+					<h3 style={{ margin: "24px auto" }}>Cursos Individuales</h3>
+					<Flex flexWrap={"wrap"} gap={6} justifyContent={"center"}>
+						{finalFilteredCourses?.map((course) => {
+							return (
+								<Card key={course.id} variant={"custom"} w={600}>
+									<CardHeader paddingBottom={3}>
+										{course.duration && (
+											<Text display={"flex"} alignItems={"center"} fontFamily={"cursive"} mb={3}>
+												<Icon as={MdAccessTime} mr={2} color={"accent"}></Icon>
+												Duración: {course.duration}
+											</Text>
+										)}
+										{course.url ? (
+											<Link href={course.url} target="_blank" color={"accent"}>
+												{course.title}
+											</Link>
+										) : (
+											<Heading size="sm">{course.title}</Heading>
+										)}
+									</CardHeader>
+									<CardBody paddingTop={0}>
+										{course.description && <Text>Descripción: {course.description}</Text>}
+										{mapTechIdsToNames(course.technologiesIds)}
+									</CardBody>
+								</Card>
+							);
+						})}
+					</Flex>
+				</>
+			)}
 
 			{/* Modal para mostrar los cursos de la ruta seleccionada */}
 			<Modal isOpen={isOpen} onClose={onClose}>
