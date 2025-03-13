@@ -127,8 +127,6 @@ export default function EducationPage() {
 
 	if (!education) return <div>Loading...</div>;
 
-	console.log(finalFilteredPaths);
-
 	return (
 		<Container maxW={{ base: "container.xl" }} py={8}>
 			<h1>Educación</h1>
