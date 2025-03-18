@@ -42,8 +42,9 @@ export default function Home() {
 		fetchProjects();
 	}, []);
 	const MotionModalContent = motion(ModalContent);
+
 	return (
-		<Container maxW={{ base: "container.xl" }} py={8}>
+		<Container maxW={{ base: "container.xl" }} pt={4}>
 			<Stack direction={{ base: "column", md: "row" }} spacing={10}>
 				<Box
 					h="220px"
@@ -94,7 +95,7 @@ export default function Home() {
 				</VStack>
 			</Stack>
 
-			<Box mt={10}>
+			<Box className="blocky-style">
 				<h2>Acerca de mí</h2>
 				<Text mb={4} style={{ textIndent: "2em" }}>
 					Programadora autodidacta desde temprana edad, interesada en ampliar mis experiencias en el ámbito del software a nivel
@@ -127,7 +128,7 @@ export default function Home() {
 					así con frecuencia su reconocimiento.
 				</Text>
 			</Box>
-			<Box mt={10}>
+			<Box className="blocky-style">
 				<h2>Idiomas que hablo</h2>
 				<Box display={"flex"} gap={4}>
 					<Button p={5} rounded="md" shadow="md" display={"flex"} alignItems={"center"} title="Spanish">
@@ -146,7 +147,7 @@ export default function Home() {
 				<Text mt={5}>Dispongo tanto de ciudadanía 🇦🇷 Argentina como 🇮🇹 Italiana.</Text>
 			</Box>
 			{process.env.TOGGLE_PROJECTS === "true" && (
-				<Box mt={10}>
+				<Box className="blocky-style">
 					<h2>Destacados</h2>
 					<SimpleGrid columns={[1, 2, 3]} spacing={6}>
 						{featuredProjects.map((project: Project) => (

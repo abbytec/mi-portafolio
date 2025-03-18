@@ -8,7 +8,12 @@ const config: ThemeConfig = {
 	initialColorMode: "system",
 	useSystemColorMode: false,
 };
-
+const blockyStyle = {
+	border: "1px solid var(--chakra-colors-accent)",
+	padding: "0 22px 22px",
+	borderRadius: "10px",
+	marginTop: "var(--chakra-space-10)",
+};
 const theme = extendTheme({
 	config,
 	semanticTokens: {
@@ -76,6 +81,7 @@ const theme = extendTheme({
 				"--font-caveat": caveat.style.fontFamily,
 				"--font-lora": lora.style.fontFamily,
 			},
+			".blocky-style": blockyStyle,
 			div: {
 				_focusVisible: {
 					outline: "none!important",

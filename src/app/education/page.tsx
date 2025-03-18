@@ -128,7 +128,7 @@ export default function EducationPage() {
 	if (!education) return <div>Loading...</div>;
 
 	return (
-		<Container maxW={{ base: "container.xl" }} py={8}>
+		<Container maxW={{ base: "container.xl" }} pt={4}>
 			<h1>Educación</h1>
 			<h2>Formación académica</h2>
 			<Flex mb={4} gap={4} justifyContent={"space-between"} wrap={"wrap"}>

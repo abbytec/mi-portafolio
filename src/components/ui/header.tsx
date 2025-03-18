@@ -43,15 +43,16 @@ export default function Header() {
 	return (
 		<Flex as="header" p={4} alignItems="center" justifyContent="space-between" boxShadow="md">
 			{/* Breadcrumb visible en pantallas medianas y grandes */}
-			<Breadcrumb as="nav" separator="-" display={{ base: "none", md: "block" }} margin={"0 auto"}>
+			<Breadcrumb as="nav" separator="&nbsp;&nbsp;/&nbsp;&nbsp;" display={{ base: "none", md: "block" }} margin={"0 auto"}>
 				{navLinks.map((link) => {
 					const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
 
 					return (
-						<BreadcrumbItem key={link.href}>
+						<BreadcrumbItem key={link.href} fontSize="17px">
 							<BreadcrumbLink
 								as={NextLink}
 								href={link.href}
+								fontSize="17px"
 								passHref
 								onClick={playClickSound}
 								color={isActive ? "var(--chakra-colors-accent)" : "var(--chakra-colors-text)"}>
