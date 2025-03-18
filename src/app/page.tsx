@@ -84,7 +84,7 @@ export default function Home() {
 				</Modal>
 				<VStack spacing={6} textAlign="center">
 					<h1 style={{ fontWeight: "bold" }}>¡Hola! Me llamo Abigaíl</h1>
-					<Text fontSize="xl">Soy una desarrolladora Full Stack enfocada en crear soluciones de software innovadoras.</Text>
+					<Text fontSize="xl">Soy desarrolladora Full Stack, enfocada en crear soluciones de software innovadoras.</Text>
 					<Text
 						display={{ base: "none", md: "block" }}
 						fontSize="18px"
