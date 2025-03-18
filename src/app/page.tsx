@@ -19,6 +19,7 @@ import {
 	Button,
 	Icon,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
@@ -40,7 +41,7 @@ export default function Home() {
 		};
 		fetchProjects();
 	}, []);
-
+	const MotionModalContent = motion(ModalContent);
 	return (
 		<Container maxW={{ base: "container.xl" }} py={8}>
 			<Stack direction={{ base: "column", md: "row" }} spacing={10}>
@@ -53,7 +54,7 @@ export default function Home() {
 					mx={{ base: "auto", md: "0" }} // Centrado horizontal en móvil
 					position="relative"
 					onClick={onOpen}>
-					<Image src="/pfp.jpg" alt="Mi Foto" objectFit="cover" w="100%" h="100%" />
+					<Image src="/pfp.jpg" alt="Mi Foto" objectFit="cover" w="100%" h="100%" transform={"scaleX(-1)"} />
 					<Icon
 						as={FaSearch}
 						position="absolute"
@@ -69,12 +70,16 @@ export default function Home() {
 				{/* Modal con la imagen grande */}
 				<Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
 					<ModalOverlay />
-					<ModalContent>
+					<MotionModalContent
+						initial={{ opacity: 0, rotate: 0, scaleX: -1 }}
+						animate={{ opacity: 1, rotate: 0, scaleX: 1 }}
+						exit={{ opacity: 0, rotate: 0, scaleX: -1 }}
+						transition={{ duration: 0.5, ease: "easeOut" }}>
 						<ModalCloseButton color={"accent"} fontSize={"large"} />
 						<ModalBody p={0}>
 							<Image src="/pfp.jpg" alt="Mi Foto Grande" objectFit="contain" w="100%" h="auto" />
 						</ModalBody>
-					</ModalContent>
+					</MotionModalContent>
 				</Modal>
 				<VStack spacing={6} textAlign="center">
 					<h1 style={{ fontWeight: "bold" }}>¡Hola! Me llamo Abigaíl</h1>
