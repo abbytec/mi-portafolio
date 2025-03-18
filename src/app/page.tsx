@@ -133,15 +133,15 @@ export default function Home() {
 				<Box display={"flex"} gap={4}>
 					<Button p={5} rounded="md" shadow="md" display={"flex"} alignItems={"center"} title="Spanish">
 						<Image src="/flags/es.png" aria-label="Spanish" w={"24px"} alt="Spanish" rounded="100" marginRight={2} />
-						<h3>C2</h3>
+						<p style={{ fontSize: "20px" }}>C 2</p>
 					</Button>
 					<Button p={5} rounded="md" shadow="md" display={"flex"} alignItems={"center"} title="English">
 						<Image src="/flags/en.png" aria-label="English" w={"24px"} alt="English" rounded="100" marginRight={2} />
-						<h3>B2</h3>
+						<p style={{ fontSize: "20px" }}>B 2</p>
 					</Button>
 					<Button p={5} rounded="md" shadow="md" display={"flex"} alignItems={"center"} title="Portuguese">
 						<Image src="/flags/pt.png" aria-label="Portuguese" w={"24px"} alt="Portuguese" rounded="100" marginRight={2} />
-						<h3>B1</h3>
+						<p style={{ fontSize: "20px" }}>B 1</p>
 					</Button>
 				</Box>
 				<Text mt={5}>Dispongo tanto de ciudadanía 🇦🇷 Argentina como 🇮🇹 Italiana.</Text>

@@ -100,6 +100,19 @@ const theme = extendTheme({
 				fontSize: "64px",
 				textAlign: "center",
 				fontFamily: "var(--font-caveat), cursive",
+				"&::before, &::after": {
+					color: "var(--chakra-colors-secondary)",
+					position: "relative",
+					fontSize: "0.8em",
+				},
+				"&::before": {
+					content: '"≽"',
+					left: "-0.5em",
+				},
+				"&::after": {
+					content: '"≼"',
+					right: "-0.5em",
+				},
 			},
 			h2: {
 				fontSize: "48px",
