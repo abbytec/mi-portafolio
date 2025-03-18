@@ -17,7 +17,7 @@ export default function Providers({ children }: Readonly<{ children: React.React
 				},
 			});
 		}
-	}, [neko]);
+	}, []);
 	return (
 		<div id="interfaz">
 			<ColorModeScript initialColorMode={theme.config.initialColorMode} />

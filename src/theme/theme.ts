@@ -1,6 +1,6 @@
 // src/theme/theme.ts
 import { extendTheme, ThemeConfig } from "@chakra-ui/react";
-import { merriweather, caveat, specialElite } from "./fonts";
+import { merriweather, caveat, lora } from "./fonts";
 import { CardTheme } from "./CardTheme";
 import { ModalTheme } from "./ModalTheme";
 
@@ -8,7 +8,12 @@ const config: ThemeConfig = {
 	initialColorMode: "system",
 	useSystemColorMode: false,
 };
-
+const blockyStyle = {
+	border: "1px solid var(--chakra-colors-accent)",
+	padding: "0 22px 22px",
+	borderRadius: "10px",
+	marginTop: "var(--chakra-space-10)",
+};
 const theme = extendTheme({
 	config,
 	semanticTokens: {
@@ -74,8 +79,9 @@ const theme = extendTheme({
 			":root": {
 				"--font-merriweather": merriweather.style.fontFamily,
 				"--font-caveat": caveat.style.fontFamily,
-				"--font-special-elite": specialElite.style.fontFamily,
+				"--font-lora": lora.style.fontFamily,
 			},
+			".blocky-style": blockyStyle,
 			div: {
 				_focusVisible: {
 					outline: "none!important",
@@ -84,8 +90,8 @@ const theme = extendTheme({
 			body: {
 				bg: "bg",
 				color: "text",
-				fontSize: "16px",
-				fontFamily: "var(--font-merriweather), serif",
+				fontSize: "18px",
+				fontFamily: "var(--font-lora), sans-serif",
 			},
 			header: {
 				bg: "var(--chakra-colors-panel)",
@@ -94,6 +100,19 @@ const theme = extendTheme({
 				fontSize: "64px",
 				textAlign: "center",
 				fontFamily: "var(--font-caveat), cursive",
+				"&::before, &::after": {
+					color: "var(--chakra-colors-secondary)",
+					position: "relative",
+					fontSize: "0.8em",
+				},
+				"&::before": {
+					content: '"≽"',
+					left: "-0.5em",
+				},
+				"&::after": {
+					content: '"≼"',
+					right: "-0.5em",
+				},
 			},
 			h2: {
 				fontSize: "48px",
@@ -106,6 +125,8 @@ const theme = extendTheme({
 			},
 			a: {
 				fontWeight: "bold",
+				fontFamily: "var(--font-merriweather), serif",
+				fontSize: "16px",
 				_hover: {
 					color: "var(--chakra-colors-accent)",
 					textDecoration: "none!important",

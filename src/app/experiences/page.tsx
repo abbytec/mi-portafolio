@@ -32,35 +32,39 @@ export default function ExperienciasPage() {
 	if (!data) return <Text>Cargando...</Text>;
 
 	return (
-		<Container maxW="container.lg" py={8}>
+		<Container maxW="container.lg" pt={4}>
 			<h1>Experiencias</h1>
-			{data.experiences.map((exp) => (
-				<Box key={exp.title} mb={6}>
-					{exp.url && (
-						<Link href={exp.url} as="h3" style={{ fontSize: "24px" }} mb={1}>
-							{exp.title}
-						</Link>
-					)}
+			<Box className="blocky-style" mt={2}>
+				<h2>Laborales</h2>
+				{data.experiences.map((exp, expidx) => (
+					<Box key={exp.title} mb={expidx !== data.experiences.length - 1 ? 6 : 0}>
+						{exp.url && (
+							<Link href={exp.url} as="h3" style={{ fontSize: "22px" }} mb={1}>
+								{exp.title}
+							</Link>
+						)}
 
-					{!exp.url && (
-						<Heading as="h3" style={{ fontSize: "24px" }} mb={1}>
-							{exp.title}
-						</Heading>
-					)}
+						{!exp.url && (
+							<Heading as="h3" style={{ fontSize: "22px" }} mb={1}>
+								{exp.title}
+							</Heading>
+						)}
 
-					<Text fontStyle="italic" mb={2} color={"accent"}>
-						{exp.period}
+						<Text fontStyle="italic" mb={2} color={"accent"}>
+							{exp.period}
+						</Text>
+						<Text>{exp.description}</Text>
+					</Box>
+				))}
+			</Box>
+			<Box className="blocky-style">
+				<h2>Actividades Extra</h2>
+				{data.other.map((activity, i) => (
+					<Text key={"activity-" + i} mb={2}>
+						• {activity}
 					</Text>
-					<Text>{exp.description}</Text>
-				</Box>
-			))}
-
-			<h2>Actividades Extra</h2>
-			{data.other.map((activity, i) => (
-				<Text key={"activity-" + i} mb={2}>
-					• {activity}
-				</Text>
-			))}
+				))}
+			</Box>
 		</Container>
 	);
 }

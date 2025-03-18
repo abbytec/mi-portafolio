@@ -7,7 +7,7 @@ import { FaWhatsapp, FaInstagram, FaLinkedin, FaGithub, FaDiscord } from "react-
 
 export default function Contact() {
 	return (
-		<Container maxW={{ base: "container.xl" }} py={8}>
+		<Container maxW={{ base: "container.xl" }} pt={4}>
 			<h1>Contacto</h1>
 			<Box py={4}>
 				<h2>Redes Sociales</h2>
