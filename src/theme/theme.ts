@@ -1,6 +1,6 @@
 // src/theme/theme.ts
 import { extendTheme, ThemeConfig } from "@chakra-ui/react";
-import { merriweather, caveat, specialElite } from "./fonts";
+import { merriweather, caveat, lora } from "./fonts";
 import { CardTheme } from "./CardTheme";
 import { ModalTheme } from "./ModalTheme";
 
@@ -74,7 +74,7 @@ const theme = extendTheme({
 			":root": {
 				"--font-merriweather": merriweather.style.fontFamily,
 				"--font-caveat": caveat.style.fontFamily,
-				"--font-special-elite": specialElite.style.fontFamily,
+				"--font-lora": lora.style.fontFamily,
 			},
 			div: {
 				_focusVisible: {
@@ -84,8 +84,8 @@ const theme = extendTheme({
 			body: {
 				bg: "bg",
 				color: "text",
-				fontSize: "16px",
-				fontFamily: "var(--font-merriweather), serif",
+				fontSize: "18px",
+				fontFamily: "var(--font-lora), sans-serif",
 			},
 			header: {
 				bg: "var(--chakra-colors-panel)",
@@ -106,6 +106,8 @@ const theme = extendTheme({
 			},
 			a: {
 				fontWeight: "bold",
+				fontFamily: "var(--font-merriweather), serif",
+				fontSize: "16px",
 				_hover: {
 					color: "var(--chakra-colors-accent)",
 					textDecoration: "none!important",

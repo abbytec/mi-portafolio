@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "../components/ui/header"; // Crearás este componente a continuación
 import Providers from "./providers";
 import { Metadata } from "next";
-import { merriweather, caveat, specialElite } from "@/theme/fonts";
+import { merriweather, caveat, lora } from "@/theme/fonts";
 import { PortalManager } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 	return (
 		<html lang="es">
 			<head></head>
-			<body className={`${merriweather.variable} ${caveat.variable} ${specialElite.variable}`}>
+			<body className={`${merriweather.variable} ${caveat.variable} ${lora.variable}`}>
 				<Providers>
 					<PortalManager>
 						<Header />

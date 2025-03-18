@@ -1,5 +1,5 @@
 // src/theme/fonts.ts
-import { Merriweather, Caveat, Special_Elite } from "next/font/google";
+import { Merriweather, Caveat, Lora } from "next/font/google";
 
 export const merriweather = Merriweather({
 	subsets: ["latin"],
@@ -13,8 +13,8 @@ export const caveat = Caveat({
 	variable: "--font-caveat",
 });
 
-export const specialElite = Special_Elite({
+export const lora = Lora({
 	subsets: ["latin"],
-	weight: ["400"],
-	variable: "--font-special-elite",
+	weight: ["400", "700"],
+	variable: "--font-lora",
 });

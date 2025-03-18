@@ -101,7 +101,7 @@ export default function EducationPage() {
 			.filter(Boolean) as StackTechnology[];
 
 		return (
-			<Text mt={2} display={"flex"} flexWrap={"wrap"} mb={6}>
+			<Text display={"flex"} flexWrap={"wrap"} mb={6}>
 				{technologies.length !== 0 && (
 					<Text mr={2} fontFamily={"cursive"}>
 						Tecnologías:
@@ -219,7 +219,7 @@ export default function EducationPage() {
 						{finalFilteredPaths?.map((path) => {
 							return (
 								<Card key={path.name} w={600} variant={"custom"}>
-									<CardHeader paddingBottom={3}>
+									<CardHeader paddingBottom={2}>
 										{path.duration && (
 											<Text display={"flex"} alignItems={"center"} fontFamily={"cursive"} mb={3}>
 												<Icon as={MdAccessTime} mr={2} color={"accent"}></Icon>
@@ -264,7 +264,7 @@ export default function EducationPage() {
 						{finalFilteredCourses?.map((course) => {
 							return (
 								<Card key={course.id} variant={"custom"} w={600}>
-									<CardHeader paddingBottom={3}>
+									<CardHeader paddingBottom={2}>
 										{course.duration && (
 											<Text display={"flex"} alignItems={"center"} fontFamily={"cursive"} mb={3}>
 												<Icon as={MdAccessTime} mr={2} color={"accent"}></Icon>

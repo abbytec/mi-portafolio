@@ -86,7 +86,7 @@ export default function Home() {
 					<Text fontSize="xl">Soy una desarrolladora Full Stack enfocada en crear soluciones de software innovadoras.</Text>
 					<Text
 						display={{ base: "none", md: "block" }}
-						fontSize="md"
+						fontSize="18px"
 						marginRight={"auto"}
 						style={{ color: "var(--chakra-colors-accent" }}>
 						Gracias por pasarte por aqui!
@@ -96,12 +96,12 @@ export default function Home() {
 
 			<Box mt={10}>
 				<h2>Acerca de mí</h2>
-				<Text mb={4} lineHeight={"1.8"} style={{ textIndent: "2em" }}>
+				<Text mb={4} style={{ textIndent: "2em" }}>
 					Programadora autodidacta desde temprana edad, interesada en ampliar mis experiencias en el ámbito del software a nivel
 					empresarial. A veces doy tutorías, fomentando el aprendizaje continuo. Disfruto de generar nuevas ideas y trabajar en equipo
 					para concretarlas.
 				</Text>
-				<Text mb={4} lineHeight={"1.8"} style={{ textIndent: "2em" }}>
+				<Text mb={4} style={{ textIndent: "2em" }}>
 					Fuera del horario laboral, formo parte del STAFF de{" "}
 					<Link href="https://discord.com/invite/programacion">
 						<strong>Programadores y Estudiantes</strong>
@@ -109,7 +109,7 @@ export default function Home() {
 					, una comunidad de Discord con más de 80 mil usuarios y top 5 global en educación en la plataforma. Donde se realizan
 					talleres, y se proporciona un espacio para que nuestros usuarios puedan ayudarse mutuamente.
 				</Text>
-				<Text mb={4} lineHeight={"1.8"} style={{ textIndent: "2em" }}>
+				<Text mb={4} style={{ textIndent: "2em" }}>
 					Soy secretaria en{" "}
 					<Link href="https://www.instagram.com/rotaractvillacarlospaz/">
 						<strong>Rotaract Club Villa Carlos Paz</strong>
@@ -118,7 +118,7 @@ export default function Home() {
 					capacitación presenciales para clubes de diferentes localidades del país, obteniendo reconocimiento de la legislatura de la
 					Provincia de Cordoba.
 				</Text>
-				<Text lineHeight={"1.8"}>
+				<Text>
 					<b style={{ color: "var(--chakra-colors-secondary)" }}>Fortalezas y debilidades:</b>&ensp;Tengo Trastorno de Deficit de
 					Atención e Hiperactividad diagnosticado, por lo que para evitar perder la concentración, suelo realizar un esfuerzo extra a
 					la hora de organizar (detalladamente) mis tareas o espacio de trabajo mediante notas en papel u archivos de texto.
