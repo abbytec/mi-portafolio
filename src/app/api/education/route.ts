@@ -43,6 +43,7 @@ export type StackIds =
 	| "typescript"
 	| "ui-ux"
 	| "bootstrap"
+	| "tailwind-css"
 	| "sass-scss"
 	| "rxjs"
 	| "reactjs"
@@ -124,7 +125,18 @@ const jsonData: Education = {
 				"genericos-1",
 			],
 			url: "https://www.linkedin.com/learning/paths/conviertete-en-desarrollador-web-front-end?originalSubdomain=es",
-			technologiesIds: ["desarrollo-web", "html-css", "sass-scss", "javascript", "reactjs", "angular", "vuejs", "typescript", "scrum"],
+			technologiesIds: [
+				"desarrollo-web",
+				"html-css",
+				"sass-scss",
+				"javascript",
+				"reactjs",
+				"angular",
+				"vuejs",
+				"typescript",
+				"scrum",
+				"tailwind-css",
+			],
 		},
 		{
 			name: "Conviértete en especialista en desarrollo de ecosistemas (LinkedIn)",
