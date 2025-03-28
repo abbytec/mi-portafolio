@@ -103,7 +103,7 @@ export default function Home() {
 					para concretarlas.
 				</Text>
 				<Text mb={4} style={{ textIndent: "2em" }}>
-					Fuera del horario laboral, formo parte del STAFF de{" "}
+					Formo parte del STAFF de{" "}
 					<Link href="https://discord.com/invite/programacion">
 						<strong>Programadores y Estudiantes</strong>
 					</Link>
