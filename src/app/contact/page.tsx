@@ -35,7 +35,7 @@ export default function Contact() {
 							GitHub
 						</Button>
 					</Link>
-					<Link href="https://discordapp.com/channels/@me/220683580467052544/" isExternal>
+					<Link href="https://discordapp.com/users/220683580467052544" isExternal>
 						<Button leftIcon={<Icon as={FaDiscord} />} colorScheme="purple" variant="outline">
 							Discord
 						</Button>

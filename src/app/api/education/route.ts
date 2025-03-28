@@ -43,6 +43,7 @@ export type StackIds =
 	| "typescript"
 	| "ui-ux"
 	| "bootstrap"
+	| "tailwind-css"
 	| "sass-scss"
 	| "rxjs"
 	| "reactjs"
@@ -124,7 +125,18 @@ const jsonData: Education = {
 				"genericos-1",
 			],
 			url: "https://www.linkedin.com/learning/paths/conviertete-en-desarrollador-web-front-end?originalSubdomain=es",
-			technologiesIds: ["desarrollo-web", "html-css", "sass-scss", "javascript", "reactjs", "angular", "vuejs", "typescript", "scrum"],
+			technologiesIds: [
+				"desarrollo-web",
+				"html-css",
+				"sass-scss",
+				"javascript",
+				"reactjs",
+				"angular",
+				"vuejs",
+				"typescript",
+				"scrum",
+				"tailwind-css",
+			],
 		},
 		{
 			name: "Conviértete en especialista en desarrollo de ecosistemas (LinkedIn)",
@@ -727,6 +739,13 @@ const jsonData: Education = {
 			title: "SCRUM: Roles",
 			duration: "1h 41min",
 			url: "https://www.linkedin.com/learning/scrum-roles/",
+			technologiesIds: ["scrum"],
+		},
+		{
+			id: "scrum-3",
+			individual: true,
+			title: "Scrum Foundation Professional Certificate SFPC (v2020 - expired)",
+			url: "https://www.credly.com/badges/26b784bc-c4ce-4e32-9c14-a8beaa404922/public_url",
 			technologiesIds: ["scrum"],
 		},
 		{
