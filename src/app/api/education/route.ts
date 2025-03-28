@@ -742,6 +742,13 @@ const jsonData: Education = {
 			technologiesIds: ["scrum"],
 		},
 		{
+			id: "scrum-3",
+			individual: true,
+			title: "Scrum Foundation Professional Certificate SFPC (v2020 - expired)",
+			url: "https://www.credly.com/badges/26b784bc-c4ce-4e32-9c14-a8beaa404922/public_url",
+			technologiesIds: ["scrum"],
+		},
+		{
 			id: "gestion-1",
 			individual: false,
 			title: "Getting Things Done. Organízate con eficacia",
