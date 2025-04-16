@@ -9,11 +9,18 @@ const config: ThemeConfig = {
 	useSystemColorMode: false,
 };
 const blockyStyle = {
-	border: "1px solid var(--chakra-colors-accent)",
-	padding: "0 22px 22px",
+	position: "relative",
 	borderRadius: "10px",
 	marginTop: "var(--chakra-space-10)",
+	padding: "0 22px 22px",
+	background: "var(--chakra-colors-bg)",
+	zIndex: 1, // El blocky queda por encima del aura
+	overflow: "hidden", // Recorta el aura al contenedor
+	border: "1px solid var(--chakra-colors-accent)",
 };
+
+const headerHeight = 72;
+
 const theme = extendTheme({
 	config,
 	semanticTokens: {
@@ -93,8 +100,25 @@ const theme = extendTheme({
 				fontSize: "18px",
 				fontFamily: "var(--font-lora), sans-serif",
 			},
+			main: {
+				height: `calc(100vh - ${headerHeight}px)`,
+				minHeight: "max-content",
+				"&::before": {
+					content: '""',
+					position: "absolute",
+					width: "calc(100% - 1rem)",
+					height: `calc(100% - ${headerHeight}px - 1rem)`,
+					pointerEvents: "none",
+					zIndex: 0,
+					opacity: "var(--aura-opacity, 0)",
+					transition: "opacity 0.3s ease",
+					background:
+						"radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--chakra-colors-secondary), transparent 15%)",
+				},
+			},
 			header: {
 				bg: "var(--chakra-colors-panel)",
+				height: `${headerHeight}px`,
 			},
 			h1: {
 				fontSize: "64px",

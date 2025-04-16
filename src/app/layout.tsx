@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import { merriweather, caveat, lora } from "@/theme/fonts";
 import { PortalManager } from "@chakra-ui/react";
 import NextSectionBtn from "@/components/NextSectionBtn";
+import Footer from "@/components/ui/footer";
 
 export const metadata: Metadata = {
 	title: "Abigail Palmero",
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 						<Header />
 						<main style={{ padding: "1rem" }}>{children}</main>
 						<NextSectionBtn />
+						<Footer />
 					</PortalManager>
 				</Providers>
 			</body>
