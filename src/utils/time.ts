@@ -1,7 +1,7 @@
-const timeRegex = /^(?:(\d+\.?\d?)h\s*)?(?:(\d+.?\d?)min)?$/;
+const timeRegex = RegExp(/^(?:(\d+\.?\d?)h\s*)?(?:(\d+.?\d?)min)?$/);
 
 function parseTimeString(timeStr: string) {
-	const match = timeStr.match(timeRegex);
+	const match = timeRegex.exec(timeStr);
 
 	if (!match) {
 		throw new Error(`Formato inválido para el tiempo: "${timeStr}"`);
