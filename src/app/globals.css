@@ -9,8 +9,3 @@
 html {
     background: var(--chakra-colors-panel);
 }
-
-main {
-    height: calc(100vh - 72px);
-    min-height: max-content;
-}
