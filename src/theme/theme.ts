@@ -113,7 +113,7 @@ const theme = extendTheme({
 					opacity: "var(--aura-opacity, 0)",
 					transition: "opacity 0.3s ease",
 					background:
-						"radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--chakra-colors-secondary), transparent 15%)",
+						"radial-gradient(circle 1600px at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--chakra-colors-secondary), transparent 15%)",
 				},
 			},
 			header: {
