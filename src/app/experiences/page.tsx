@@ -39,7 +39,7 @@ export default function ExperienciasPage() {
 				{data.experiences.map((exp, expidx) => (
 					<Box key={exp.title} mb={expidx !== data.experiences.length - 1 ? 6 : 0}>
 						{exp.url && (
-							<Link href={exp.url} as="h3" style={{ fontSize: "22px" }} mb={1}>
+							<Link href={exp.url} as="h3" style={{ fontSize: "22px", color: "var(--chakra-colors-secondary)" }} mb={1}>
 								{exp.title}
 							</Link>
 						)}

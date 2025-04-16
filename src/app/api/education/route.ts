@@ -248,6 +248,12 @@ const jsonData: Education = {
 			url: "",
 			technologiesIds: ["genericos"],
 		},
+		{
+			name: "Flutter Courses (LinkedIn)",
+			duration: "7.5h",
+			coursesIds: ["flutter-1", "flutter-2", "flutter-3", "flutter-4", "flutter-5"],
+			technologiesIds: ["desarrollo-movil", "flutter"],
+		},
 	],
 	stacks: [
 		{ id: "desarrollo-web", name: "Desarrollo Web", isCategory: true, color: "#3498db" },
@@ -1050,7 +1056,7 @@ const jsonData: Education = {
 		{
 			id: "flutter-1",
 			title: "Flutter: Part 01 Introduction",
-			individual: true,
+			individual: false,
 			url: "https://www.linkedin.com/learning/flutter-part-01-introduction/",
 			duration: "1h 33min",
 			technologiesIds: ["desarrollo-movil", "flutter"],
@@ -1058,7 +1064,7 @@ const jsonData: Education = {
 		{
 			id: "flutter-2",
 			title: "Flutter: Part 02 Building Apps",
-			individual: true,
+			individual: false,
 			url: "https://www.linkedin.com/learning/flutter-part-02-building-apps/",
 			duration: "1h 23min",
 			technologiesIds: ["desarrollo-movil", "flutter"],
@@ -1066,7 +1072,7 @@ const jsonData: Education = {
 		{
 			id: "flutter-3",
 			title: "Flutter: Part 03 Flutter Widgets",
-			individual: true,
+			individual: false,
 			url: "https://www.linkedin.com/learning/flutter-part-03-flutter-widgets/",
 			duration: "1h 30min",
 			technologiesIds: ["desarrollo-movil", "flutter"],
@@ -1074,7 +1080,7 @@ const jsonData: Education = {
 		{
 			id: "flutter-4",
 			title: "Flutter: Part 04 Building an App with State",
-			individual: true,
+			individual: false,
 			url: "https://www.linkedin.com/learning/flutter-part-04-building-an-app-with-state/",
 			duration: "1h 38min",
 			technologiesIds: ["desarrollo-movil", "flutter"],
@@ -1082,7 +1088,7 @@ const jsonData: Education = {
 		{
 			id: "flutter-5",
 			title: "Flutter: Part 05 Flutter and Dart Packages",
-			individual: true,
+			individual: false,
 			url: "https://www.linkedin.com/learning/flutter-part-05-flutter-and-dart-packages/",
 			duration: "1h 26min",
 			technologiesIds: ["desarrollo-movil", "flutter"],
