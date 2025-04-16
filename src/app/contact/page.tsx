@@ -2,10 +2,11 @@
 "use client";
 
 import { Link } from "@chakra-ui/next-js";
-import { Box, VStack, Container, Text, HStack, Button, Icon } from "@chakra-ui/react";
+import { Box, VStack, Container, Text, HStack, Button, Icon, useColorMode } from "@chakra-ui/react";
 import { FaWhatsapp, FaInstagram, FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
 
 export default function Contact() {
+	const { colorMode, toggleColorMode } = useColorMode();
 	return (
 		<Container maxW={{ base: "container.xl" }} pt={4}>
 			<h1>Contacto</h1>
@@ -14,29 +15,33 @@ export default function Contact() {
 				<HStack spacing={4} wrap={"wrap"} my={4} justifyContent={{ base: "center", md: "flex-start" }}>
 					{process.env.ANTI_DOXXING_POLICY === "true" && (
 						<Link href="https://wa.me/+5493541209175" isExternal>
-							<Button leftIcon={<Icon as={FaWhatsapp} />} colorScheme="green" variant="outline">
+							<Button leftIcon={<Icon as={FaWhatsapp} />} colorScheme="green" variant={colorMode === "dark" ? "outline" : "solid"}>
 								WhatsApp
 							</Button>
 						</Link>
 					)}
 
 					<Link href="https://www.instagram.com/abbytec_hd" isExternal>
-						<Button leftIcon={<Icon as={FaInstagram} />} colorScheme="pink" variant="outline">
+						<Button leftIcon={<Icon as={FaInstagram} />} colorScheme="pink" variant={colorMode === "dark" ? "outline" : "solid"}>
 							Instagram
 						</Button>
 					</Link>
 					<Link href="https://www.linkedin.com/in/abby-pal" isExternal>
-						<Button leftIcon={<Icon as={FaLinkedin} />} colorScheme="blue" variant="outline">
+						<Button leftIcon={<Icon as={FaLinkedin} />} colorScheme="blue" variant={colorMode === "dark" ? "outline" : "solid"}>
 							LinkedIn
 						</Button>
 					</Link>
 					<Link href="https://github.com/abbytec" isExternal>
-						<Button leftIcon={<Icon as={FaGithub} />} colorScheme="white" _hover={{ color: "text", bg: "panel" }} variant="outline">
+						<Button
+							leftIcon={<Icon as={FaGithub} />}
+							colorScheme={colorMode === "dark" ? "white" : "blackAlpha"}
+							_hover={{ color: "text", bg: "panel" }}
+							variant={colorMode === "dark" ? "outline" : "solid"}>
 							GitHub
 						</Button>
 					</Link>
 					<Link href="https://discordapp.com/users/220683580467052544" isExternal>
-						<Button leftIcon={<Icon as={FaDiscord} />} colorScheme="purple" variant="outline">
+						<Button leftIcon={<Icon as={FaDiscord} />} colorScheme="purple" variant={colorMode === "dark" ? "outline" : "solid"}>
 							Discord
 						</Button>
 					</Link>
@@ -53,7 +58,7 @@ export default function Contact() {
 					, una comunidad abierta de programadores y estudiantes de todo el mundo.
 				</Text>
 				<Link href="https://discord.gg/programacion" isExternal>
-					<Button leftIcon={<Icon as={FaDiscord} />} colorScheme="blue">
+					<Button leftIcon={<Icon as={FaDiscord} />} colorScheme="blue" variant={colorMode === "dark" ? "outline" : "solid"}>
 						Unirse al Servidor
 					</Button>
 				</Link>
@@ -66,7 +71,7 @@ export default function Contact() {
 					programación y participar en eventos que fomenten el networking.
 				</Text>
 				<Link href="https://discord.gg/vShXpyWTTq" isExternal>
-					<Button leftIcon={<Icon as={FaDiscord} />} variant={"custom2"}>
+					<Button leftIcon={<Icon as={FaDiscord} />} colorScheme="yellow" variant={colorMode === "dark" ? "outline" : "solid"}>
 						Unirse al Servidor
 					</Button>
 				</Link>
