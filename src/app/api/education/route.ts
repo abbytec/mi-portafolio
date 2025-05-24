@@ -79,7 +79,9 @@ export type StackIds =
 	| "computacion-cuantica"
 	| "scrum"
 	| "git"
-	| "jquery";
+	| "jquery"
+	| "docker"
+	| "kubernetes";
 
 const jsonData: Education = {
 	paths: [
@@ -184,6 +186,13 @@ const jsonData: Education = {
 			duration: "16h",
 			coursesIds: ["java-11", "java-12", "java-13", "java-14", "java-15", "java-16", "java-17", "java-18"],
 			url: "https://www.linkedin.com/learning/paths/building-your-java-skills",
+			technologiesIds: ["desarrollo-software", "java"],
+		},
+		{
+			name: "Advance Your Java Skills",
+			duration: "8h",
+			coursesIds: ["java-19", "java-20", "java-21", "java-22"],
+			url: "https://www.linkedin.com/learning/paths/advance-your-java-skills",
 			technologiesIds: ["desarrollo-software", "java"],
 		},
 		{
@@ -305,6 +314,7 @@ const jsonData: Education = {
 		{ id: "computacion-cuantica", name: "Computación Cuántica", color: "#8e44ad" },
 		{ id: "scrum", name: "Scrum", color: "#27ae60" },
 		{ id: "git", name: "Git", color: "#f05032" },
+		{ id: "docker", name: "Docker", color: "#2496ed" },
 	],
 	courses: [
 		{
@@ -1023,6 +1033,38 @@ const jsonData: Education = {
 			individual: false,
 			duration: "2h 37min",
 			url: "https://www.linkedin.com/learning/nail-your-java-interview-2/",
+			technologiesIds: ["desarrollo-software", "java"],
+		},
+		{
+			id: "java-19",
+			title: "Java: Advanced Concepts for High-Performance Development",
+			individual: false,
+			duration: "1h 57min",
+			url: "https://www.linkedin.com/learning/java-advanced-concepts-for-high-performance-development",
+			technologiesIds: ["desarrollo-software", "java"],
+		},
+		{
+			id: "java-20",
+			title: "Introduction to Docker for Java Developers",
+			individual: false,
+			duration: "1h 22min",
+			url: "https://www.linkedin.com/learning/introduction-to-docker-for-java-developers",
+			technologiesIds: ["desarrollo-software", "docker", "java"],
+		},
+		{
+			id: "java-21",
+			title: "Data Science for Java Developers",
+			individual: false,
+			duration: "3h 51min",
+			url: "https://www.linkedin.com/learning/data-science-for-java-developers",
+			technologiesIds: ["desarrollo-software", "ciencia-de-datos", "java"],
+		},
+		{
+			id: "java-22",
+			title: "Advanced Java: Hands-on with Streams, Lambda Expressions, Collections, Generics and More",
+			individual: false,
+			duration: "50min",
+			url: "https://www.linkedin.com/learning/advanced-java-hands-on-with-streams-lambda-expressions-collections-generics-and-more",
 			technologiesIds: ["desarrollo-software", "java"],
 		},
 		{
