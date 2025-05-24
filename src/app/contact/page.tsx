@@ -6,7 +6,7 @@ import { Box, VStack, Container, Text, HStack, Button, Icon, useColorMode } from
 import { FaWhatsapp, FaInstagram, FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
 
 export default function Contact() {
-	const { colorMode, toggleColorMode } = useColorMode();
+	const { colorMode } = useColorMode();
 	return (
 		<Container maxW={{ base: "container.xl" }} pt={4}>
 			<h1>Contacto</h1>
