@@ -50,6 +50,7 @@ export default function Contact() {
 
 			<Box py={4}>
 				<h2>Servidores de Discord</h2>
+				{/* 
 				<Text mb={4}>
 					Únete a{" "}
 					<Link href="https://discord.gg/programacion">
@@ -62,7 +63,9 @@ export default function Contact() {
 						Unirse al Servidor
 					</Button>
 				</Link>
-				<Text mb={4} mt={6}>
+				*/}
+
+				<Text mb={4}>
 					Únete a{" "}
 					<Link href="https://discord.gg/vShXpyWTTq">
 						<strong>Abby&apos;s Digital Cafe</strong>
