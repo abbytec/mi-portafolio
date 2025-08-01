@@ -13,7 +13,7 @@ const blockyStyle = {
 	borderRadius: "10px",
 	marginTop: "var(--chakra-space-10)",
 	padding: "0 22px 22px",
-	background: "var(--chakra-colors-bg)",
+	background: "var(--chakra-colors-bw)",
 	zIndex: 1, // El blocky queda por encima del aura
 	overflow: "hidden", // Recorta el aura al contenedor
 	border: "1px solid var(--chakra-colors-accent)",
@@ -25,6 +25,10 @@ const theme = extendTheme({
 	config,
 	semanticTokens: {
 		colors: {
+			bw: {
+				default: "#fff",
+				_dark: "#000",
+			},
 			bg: {
 				default: "#f5f5f7",
 				_dark: "#1a1a1a",
