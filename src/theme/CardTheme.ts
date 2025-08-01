@@ -8,10 +8,7 @@ const customVariant = definePartsStyle({
 	container: {
 		background: "bw",
 		color: "cardColor",
-		border: "1px solid var(--chakra-colors-cardBorder)",
-		_hover: {
-			border: "1px solid var(--chakra-colors-accent)",
-		},
+		border: "1px solid var(--chakra-colors-accent)",
 	},
 });
 
