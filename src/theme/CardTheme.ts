@@ -6,12 +6,11 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 
 const customVariant = definePartsStyle({
 	container: {
-		bg: "panel",
+		background: "bw",
 		color: "cardColor",
 		border: "1px solid var(--chakra-colors-cardBorder)",
 		_hover: {
 			border: "1px solid var(--chakra-colors-accent)",
-			background: "var(--chakra-colors-cardBg)",
 		},
 	},
 });
