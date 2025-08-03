@@ -103,12 +103,9 @@ export default function Home() {
 					para concretarlas.
 				</Text>
 				<Text mb={4} style={{ textIndent: "2em" }}>
-					Formo parte del STAFF de{" "}
-					<Link href="https://discord.com/invite/programacion">
-						<strong>Programadores y Estudiantes</strong>
-					</Link>
-					, una comunidad de Discord con más de 80 mil usuarios y top 5 global en educación en la plataforma. Donde se realizan
-					talleres, y se proporciona un espacio para que nuestros usuarios puedan ayudarse mutuamente.
+					Fui parte del STAFF de <strong>Programadores y Estudiantes</strong>, una comunidad de Discord con más de 80 mil usuarios y
+					que llegó a ser top 5 global en educación en la plataforma. Donde se realizan talleres, y se proporciona un espacio para que
+					nuestros usuarios puedan ayudarse mutuamente.
 				</Text>
 				<Text mb={4} style={{ textIndent: "2em" }}>
 					Soy secretaria en{" "}
