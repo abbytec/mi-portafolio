@@ -1,5 +1,9 @@
 // app/api/projects/route.ts
 import { NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
+
+export const runtime = "nodejs";
 
 export interface Education {
 	paths: LearningPath[];
@@ -317,1012 +321,113 @@ const jsonData: Education = {
 		{ id: "flutter", name: "Flutter", color: "#02569b" },
 		{ id: "react-native", name: "React Native", color: "#61dafb" },
 		{ id: "native-script", name: "Native Script", color: "#019f5b" },
-		{ id: "soporte-it", name: "Soporte IT", color: "#2c3e50" },
+		{ id: "soporte-it", name: "Soporte IT", color: "#005571" },
 		{ id: "fotografia", name: "Fotografía", color: "#e84393" },
 		{ id: "computacion-cuantica", name: "Computación Cuántica", color: "#8e44ad" },
 		{ id: "scrum", name: "Scrum", color: "#27ae60" },
 		{ id: "git", name: "Git", color: "#f05032" },
 		{ id: "docker", name: "Docker", color: "#2496ed" },
-		{ id: "n8n", name: "n8n", color: "#2c3e50" },
+		{ id: "n8n", name: "n8n", color: "#005571" },
 	],
-	courses: [
-		{
-			id: "0",
-			individual: true,
-			title: "On-Page SEO Training Course (Udemy)",
-			duration: "2h",
-			url: "",
-			technologiesIds: ["desarrollo-web"],
-		},
-		{
-			id: "1",
-			individual: true,
-			title: "Career Essentials in System Administration (Microsoft & LinkedIn)",
-			duration: "5h",
-			url: "https://www.linkedin.com/learning/career-essentials-in-system-administration-by-microsoft-and-linkedin/",
-			technologiesIds: ["seguridad-y-redes"],
-		},
-		{
-			id: "2",
-			individual: true,
-			title: "Networking Basics (Cisco Networking Academy)",
-			duration: "22h",
-			url: "https://www.netacad.com/courses/networking-basics?courseLang=en-US",
-			technologiesIds: ["seguridad-y-redes"],
-		},
-		{
-			id: "3",
-			individual: true,
-			duration: "22h",
-			title: "Networking Devices and Initial Configuration (Cisco Networking Academy)",
-			url: "https://www.netacad.com/courses/networking-devices-and-initial-configuration?courseLang=en-US",
-			technologiesIds: ["seguridad-y-redes"],
-		},
-		{
-			id: "4",
-			individual: true,
-			title: "Introducción a la Seguridad Cibernética (Cisco Networking Academy)",
-			duration: "6h",
-			url: "https://www.netacad.com/courses/introduction-to-cybersecurity?courseLang=en-US",
-			technologiesIds: ["seguridad-y-redes"],
-		},
-		{
-			id: "5",
-			individual: true,
-			title: "Seminario: Conceptos Prácticos de la seguridad en Informática (FCA.02.18, UNDEF)",
-			duration: "12h",
-			url: "",
-			technologiesIds: ["seguridad-y-redes"],
-		},
-		{
-			id: "node-1",
-			individual: false,
-			title: "Fundamentos del desarrollo web: Full Stack o Front-end",
-			duration: "55 min",
-			url: "https://www.linkedin.com/learning/fundamentos-del-desarrollo-web-full-stack-o-front-end/",
-			technologiesIds: ["nodejs"],
-		},
-		{
-			id: "node-2",
-			individual: false,
-			title: "Desarrollo full stack práctico: Configuración profesional de proyectos",
-			duration: "3h 49min",
-			url: "https://www.linkedin.com/learning/desarrollo-full-stack-practico-configuracion-profesional-de-proyectos/",
-			technologiesIds: ["nodejs"],
-		},
-		{
-			id: "git-1",
-			individual: false,
-			title: "GitHub para programadores",
-			duration: "1h 53min",
-			url: "https://www.linkedin.com/learning/github-para-programadores-2/",
-			technologiesIds: ["git"],
-		},
-		{
-			id: "node-3",
-			individual: false,
-			title: "Node.js esencial",
-			duration: "3h 42min",
-			url: "https://www.linkedin.com/learning/node-js-esencial-2018/",
-			technologiesIds: ["nodejs"],
-		},
-		{
-			id: "web-1",
-			individual: true,
-			title: "Desarrollo de proyectos web avanzado",
-			duration: "2h 24min",
-			url: "https://www.linkedin.com/learning/desarrollo-de-proyectos-web-avanzado/",
-			technologiesIds: ["desarrollo-web", "ui-ux", "git"],
-		},
-		{
-			id: "node-4",
-			individual: false,
-			title: "Node.js avanzado",
-			duration: "3h 6min",
-			url: "https://www.linkedin.com/learning/node-js-avanzado/",
-			technologiesIds: ["nodejs"],
-		},
-		{
-			id: "node-5",
-			individual: false,
-			title: "Node.js: Trucos",
-			duration: "1h 53min",
-			url: "https://www.linkedin.com/learning/node-js-trucos/",
-			technologiesIds: ["nodejs"],
-		},
-		{
-			id: "angular-1",
-			individual: false,
-			title: "AngularJS práctico: Web app con NodeJS y MongoDB",
-			duration: "2h 35min",
-			url: "https://www.linkedin.com/learning/angularjs-practico-web-app-con-nodejs-y-mongodb/",
-			technologiesIds: ["angular", "nodejs", "mongodb"],
-		},
-		{
-			id: "javascript-1",
-			individual: false,
-			title: "JavaScript esencial (2017)",
-			duration: "5h 27min",
-			url: "https://www.linkedin.com/learning/javascript-esencial-2017/",
-			technologiesIds: ["javascript"],
-		},
-		{
-			id: "javascript-2",
-			individual: false,
-			title: "JavaScript: Errores comunes y cómo solucionarlos",
-			duration: "2h 18min",
-			url: "https://www.linkedin.com/learning/javascript-errores-comunes-y-como-solucionarlos/",
-			technologiesIds: ["javascript"],
-		},
-		{
-			id: "javascript-3",
-			individual: false,
-			title: "JavaScript avanzado: Expresiones regulares",
-			duration: "1h 34min",
-			url: "https://www.linkedin.com/learning/javascript-avanzado-expresiones-regulares/",
-			technologiesIds: ["javascript"],
-		},
-		{
-			id: "javascript-4",
-			individual: false,
-			title: "JavaScript avanzado: Buenas prácticas",
-			duration: "1h 49min",
-			url: "https://www.linkedin.com/learning/javascript-avanzado-buenas-practicas/",
-			technologiesIds: ["javascript"],
-		},
-		{
-			id: "javascript-5",
-			individual: false,
-			title: "JavaScript: Trucos",
-			duration: "1h 19min",
-			url: "https://www.linkedin.com/learning/javascript-trucos/",
-			technologiesIds: ["javascript"],
-		},
-		{
-			id: "javascript-6",
-			individual: false,
-			title: "JavaScript: TDD y pruebas unitarias esencial",
-			duration: "2h 14min",
-			url: "https://www.linkedin.com/learning/javascript-tdd-y-pruebas-unitarias-esencial/",
-			technologiesIds: ["javascript"],
-		},
-		{
-			id: "javascript-7",
-			individual: false,
-			title: "JavaScript: Programación orientada a objetos",
-			duration: "2h 2min",
-			url: "https://www.linkedin.com/learning/javascript-programacion-orientada-a-objetos/",
-			technologiesIds: ["javascript"],
-		},
-		{
-			id: "tests-1",
-			individual: true,
-			title: "End-to-End JavaScript Testing with Cypress.io (2019)",
-			duration: "1h 29min",
-			url: "https://www.linkedin.com/learning/end-to-end-javascript-testing-with-cypress-io-2019/",
-			technologiesIds: ["desarrollo-web", "javascript"],
-		},
-		{
-			id: "frontend-1",
-			individual: false,
-			title: "Desarrollo web front-end esencial",
-			duration: "5h 2min",
-			url: "https://www.linkedin.com/learning/desarrollo-web-front-end-esencial/",
-			technologiesIds: ["html-css", "javascript", "jquery"],
-		},
-		{
-			id: "ui-ux-1",
-			individual: false,
-			title: "Diseño de interfaz (UI) esencial",
-			duration: "2h 10min",
-			url: "https://www.linkedin.com/learning/diseno-de-interfaz-ui-esencial/",
-			technologiesIds: ["ui-ux"],
-		},
-		{
-			id: "ui-ux-2",
-			individual: false,
-			title: "Experiencia de usuario (UX) esencial",
-			duration: "1h 44min",
-			url: "https://www.linkedin.com/learning/experiencia-de-usuario-ux-esencial/",
-			technologiesIds: ["ui-ux"],
-		},
-		{
-			id: "ui-ux-3",
-			individual: false,
-			title: "Maquetación y tipografía para web",
-			duration: "2h 11min",
-			url: "https://www.linkedin.com/learning/maquetacion-y-tipografia-para-web/",
-			technologiesIds: ["ui-ux"],
-		},
-		{
-			id: "html-css-1",
-			individual: false,
-			title: "Integración HTML y CSS esencial",
-			duration: "2h 51min",
-			url: "https://www.linkedin.com/learning/integracion-html-y-css-esencial/",
-			technologiesIds: ["html-css"],
-		},
-		{
-			id: "html-css-2",
-			individual: false,
-			title: "Integración HTML y CSS avanzado",
-			duration: "1h 29min",
-			url: "https://www.linkedin.com/learning/integracion-html-y-css-avanzado/",
-			technologiesIds: ["html-css"],
-		},
-		{
-			id: "adobe-xd-1",
-			individual: false,
-			title: "Adobe XD CC esencial",
-			duration: "2h 8min",
-			url: "https://www.linkedin.com/learning/adobe-xd-cc-esencial/",
-			technologiesIds: ["ui-ux"],
-		},
-		{
-			id: "adobe-xd-2",
-			individual: false,
-			title: "Adobe XD CC avanzado",
-			duration: "2h 33min",
-			url: "https://www.linkedin.com/learning/adobe-xd-cc-avanzado/",
-			technologiesIds: ["ui-ux"],
-		},
-		{
-			id: "ui-ux-4",
-			individual: false,
-			title: "Los cinco pasos del proceso creativo",
-			duration: "19min",
-			url: "https://www.linkedin.com/learning/los-cinco-pasos-del-proceso-creativo/",
-			technologiesIds: ["ui-ux"],
-		},
-		{
-			id: "ui-ux-5",
-			individual: false,
-			title: "Pensamiento crítico (2017)",
-			duration: "1h 6min",
-			url: "https://www.linkedin.com/learning/pensamiento-critico-2017/",
-			technologiesIds: ["ui-ux"],
-		},
-		{
-			id: "html-1",
-			individual: false,
-			title: "HTML esencial (2015)",
-			duration: "4h 29min",
-			url: "https://www.linkedin.com/learning/html-esencial/",
-			technologiesIds: ["html-css"],
-		},
-		{
-			id: "html-2",
-			individual: false,
-			title: "HTML avanzado",
-			duration: "3h 44min",
-			url: "https://www.linkedin.com/learning/html-avanzado/",
-			technologiesIds: ["html-css"],
-		},
-		{
-			id: "html-3",
-			individual: false,
-			title: "Aprende semántica web",
-			duration: "56min",
-			url: "https://www.linkedin.com/learning/aprende-semantica-web/",
-			technologiesIds: ["html-css"],
-		},
-		{
-			id: "css-1",
-			individual: false,
-			title: "CSS esencial",
-			duration: "2h 39min",
-			url: "https://www.linkedin.com/learning/css-esencial/",
-			technologiesIds: ["html-css"],
-		},
-		{
-			id: "css-2",
-			individual: false,
-			title: "CSS avanzado",
-			duration: "2h 3min",
-			url: "https://www.linkedin.com/learning/css-avanzado/",
-			technologiesIds: ["html-css"],
-		},
-		{
-			id: "css-3",
-			individual: false,
-			title: "CSS con SASS escencial",
-			duration: "2h 11min",
-			url: "https://www.linkedin.com/learning/css-con-sass-esencial/",
-			technologiesIds: ["html-css"],
-		},
-		{
-			id: "react-1",
-			individual: false,
-			title: "React esencial (2019)",
-			duration: "2h 48min",
-			url: "https://www.linkedin.com/learning/react-esencial-2019/",
-			technologiesIds: ["reactjs"],
-		},
-		{
-			id: "react-2",
-			individual: true,
-			title: "React Hooks esencial",
-			duration: "2h 46min",
-			url: "https://www.linkedin.com/learning/react-hooks-esencial/",
-			technologiesIds: ["desarrollo-web", "reactjs"],
-		},
-		{
-			id: "react-3",
-			individual: true,
-			title: "React avanzado 1",
-			duration: "2h 12min",
-			url: "https://www.linkedin.com/learning/react-avanzado-1/",
-			technologiesIds: ["desarrollo-web", "reactjs"],
-		},
-		{
-			id: "react-4",
-			individual: false,
-			title: "REACT práctico: Interfaz para aplicación web de gestión deportiva",
-			duration: "1h 57min",
-			url: "https://www.linkedin.com/learning/react-practico-interfaz-para-aplicacion-web-de-gestion-deportiva/",
-			technologiesIds: ["desarrollo-web", "reactjs"],
-		},
-		{
-			id: "react-native-1",
-			individual: false,
-			title: "React native práctico: aplicación móvil de usuario para gestión deportiva",
-			duration: "1h 42min",
-			url: "https://www.linkedin.com/learning/react-native-practico-aplicacion-movil-de-usuario-para-gestion-deportiva/",
-			technologiesIds: ["desarrollo-web", "react-native"],
-		},
-		{
-			id: "rxjs-1",
-			individual: false,
-			title: "RxJS práctico: Interacción con aplicación web de gestión deportiva",
-			duration: "1h 40min",
-			url: "https://www.linkedin.com/learning/rxjs-practico-interaccion-con-aplicacion-web-de-gestion-deportiva/",
-			technologiesIds: ["rxjs"],
-		},
-		{
-			id: "native-script-1",
-			individual: false,
-			title: "NativeScript práctico: Administración móvil para gestión deportiva",
-			duration: "2h 12min",
-			url: "https://www.linkedin.com/learning/nativescript-practico-administracion-movil-para-gestion-deportiva/",
-			technologiesIds: ["native-script"],
-		},
-		{
-			id: "angular-2",
-			individual: false,
-			title: "Angular esencial",
-			duration: "4h 14min",
-			url: "https://www.linkedin.com/learning/angular-esencial-14069833/",
-			technologiesIds: ["angular"],
-		},
-		{
-			id: "typescript-1",
-			individual: false,
-			title: "TypeScript esencial",
-			duration: "2h 21min",
-			url: "https://www.linkedin.com/learning/typescript-esencial/",
-			technologiesIds: ["typescript"],
-		},
-		{
-			id: "typescript-2",
-			individual: true,
-			title: "TypeScript avanzado",
-			duration: "2h 45min",
-			url: "https://www.linkedin.com/learning/typescript-avanzado/",
-			technologiesIds: ["typescript"],
-		},
-		{
-			id: "vue-1",
-			individual: false,
-			title: "Vue.js esencial (2019)",
-			duration: "3h 37min",
-			url: "https://www.linkedin.com/learning/vue-js-esencial-2019/",
-			technologiesIds: ["vuejs"],
-		},
-		{
-			id: "vue-2",
-			individual: true,
-			title: "Vue avanzado 1",
-			duration: "1h 55min",
-			url: "https://www.linkedin.com/learning/vue-avanzado-1/",
-			technologiesIds: ["vuejs"],
-		},
-		{
-			id: "vue-3",
-			individual: true,
-			title: "Vue avanzado 2",
-			duration: "2h 25min",
-			url: "https://www.linkedin.com/learning/vue-avanzado-2/",
-			technologiesIds: ["desarrollo-web", "vuejs"],
-		},
-		{
-			id: "vue-4",
-			individual: true,
-			title: "Learning Nuxt.js",
-			duration: "1h 32min",
-			url: "https://www.linkedin.com/learning/learning-nuxt-js/",
-			technologiesIds: ["desarrollo-web", "vuejs", "nuxtjs"],
-		},
-		{
-			id: "vue-5",
-			individual: false,
-			title: "Vue práctico: Desarrollo de interfaz web para gestión deportiva",
-			duration: "2h 1min",
-			url: "https://www.linkedin.com/learning/vue-practico-desarrollo-de-interfaz-web-para-gestion-deportiva/",
-			technologiesIds: ["desarrollo-web", "vuejs"],
-		},
-		{
-			id: "scrum-1",
-			individual: false,
-			title: "Aprende Scrum",
-			duration: "1h 32min",
-			url: "https://www.linkedin.com/learning/aprende-scrum/",
-			technologiesIds: ["scrum"],
-		},
-		{
-			id: "scrum-2",
-			individual: false,
-			title: "SCRUM: Roles",
-			duration: "1h 41min",
-			url: "https://www.linkedin.com/learning/scrum-roles/",
-			technologiesIds: ["scrum"],
-		},
-		{
-			id: "scrum-3",
-			individual: true,
-			title: "Scrum Foundation Professional Certificate SFPC (v2020 - expired)",
-			url: "https://www.credly.com/badges/26b784bc-c4ce-4e32-9c14-a8beaa404922/public_url",
-			technologiesIds: ["scrum"],
-		},
-		{
-			id: "gestion-1",
-			individual: false,
-			title: "Getting Things Done. Organízate con eficacia",
-			duration: "1h 32min",
-			url: "https://www.linkedin.com/learning/getting-things-done-organizate-con-eficacia/",
-			technologiesIds: ["genericos"],
-		},
-		{
-			id: "genericos-1",
-			individual: false,
-			title: "Fundamentos del teletrabajo",
-			duration: "1h 22min",
-			url: "https://www.linkedin.com/learning/fundamentos-del-teletrabajo/",
-			technologiesIds: ["genericos"],
-		},
-		{
-			id: "genericos-2",
-			individual: false,
-			title: "Prepara tu entrevista de trabajo para un puesto en programación",
-			duration: "2h 10min",
-			url: "https://www.linkedin.com/learning/prepara-tu-entrevista-de-trabajo-para-un-puesto-en-programacion/",
-			technologiesIds: ["genericos"],
-		},
-		{
-			id: "genericos-3",
-			individual: false,
-			title: "Pensamiento computacional",
-			duration: "1h 44min",
-			url: "https://www.linkedin.com/learning/pensamiento-computacional/",
-			technologiesIds: ["desarrollo-software"],
-		},
-		{
-			id: "genericos-4",
-			individual: false,
-			title: "Fundamentos esenciales de la programación",
-			duration: "2h 11min",
-			url: "https://www.linkedin.com/learning/fundamentos-esenciales-de-la-programacion-2/",
-			technologiesIds: ["desarrollo-software"],
-		},
-		{
-			id: "genericos-5",
-			individual: false,
-			title: "Fundamentos de la programación: Diseño orientado a objetos",
-			duration: "1h 26min",
-			url: "https://www.linkedin.com/learning/fundamentos-de-la-programacion-diseno-orientado-a-objetos-9062878/",
-			technologiesIds: ["desarrollo-software"],
-		},
-		{
-			id: "genericos-6",
-			individual: false,
-			title: "Marketing online: Creación de un plan integral",
-			duration: "53min",
-			url: "https://www.linkedin.com/learning/marketing-online-creacion-de-un-plan-integral/",
-			technologiesIds: ["genericos"],
-		},
-		{
-			id: "genericos-7",
-			individual: false,
-			title: "Introducción al diseño de ecosistemas",
-			duration: "1h 11min",
-			url: "https://www.linkedin.com/learning/introduccion-al-diseno-de-ecosistemas/",
-			technologiesIds: ["genericos"],
-		},
-		{
-			id: "genericos-8",
-			individual: false,
-			title: "Fundamentos esenciales del marketing digital",
-			duration: "2h 7min",
-			url: "https://www.linkedin.com/learning/fundamentos-esenciales-del-marketing-digital/",
-			technologiesIds: ["genericos"],
-		},
-		{
-			id: "genericos-9",
-			individual: false,
-			title: "Aprende a programar ¡en cualquier lenguaje!",
-			duration: "2h 50min",
-			url: "https://www.linkedin.com/learning/aprende-a-programar-en-cualquier-lenguaje/",
-			technologiesIds: ["desarrollo-software"],
-		},
-		{
-			id: "loopback-1",
-			individual: false,
-			title: "Loopback práctico: Desarrolla una API REST para gestión deportiva",
-			duration: "2h 58min",
-			url: "https://www.linkedin.com/learning/loopback-practico-desarrolla-una-api-rest-para-gestion-deportiva/",
-			technologiesIds: ["loopback-4"],
-		},
-		{
-			id: "electron-1",
-			individual: false,
-			title: "Electron práctico: Aplicación escritorio para gestión deportiva",
-			duration: "2h 5min",
-			url: "https://www.linkedin.com/learning/electron-practico-aplicacion-escritorio-para-gestion-deportiva/",
-			technologiesIds: ["electron"],
-		},
-		{
-			id: "angular-3",
-			individual: false,
-			title: "Angular avanzado",
-			duration: "2h 39min",
-			url: "https://www.linkedin.com/learning/angular-avanzado/",
-			technologiesIds: ["angular"],
-		},
-		{
-			id: "angular-4",
-			individual: false,
-			title: "Angular: Trucos",
-			duration: "2h 1min",
-			url: "https://www.linkedin.com/learning/angular-trucos/",
-			technologiesIds: ["angular"],
-		},
-		{
-			id: "angular-5",
-			individual: false,
-			title: "Angular práctico: Desarrolla una aplicación web para gestión deportiva",
-			duration: "3h 6min",
-			url: "https://www.linkedin.com/learning/angular-practico-desarrolla-una-aplicacion-web-para-gestion-deportiva/",
-			technologiesIds: ["angular"],
-		},
-		{
-			id: "java-1",
-			title: "JAVA Course (Sololearn)",
-			individual: true,
-			url: "https://www.sololearn.com/en/learn/courses/le-java",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-2",
-			title: "Java Essential Training: Syntax and Structure",
-			individual: false,
-			duration: "2h 28min",
-			url: "https://www.linkedin.com/learning/java-essential-training-syntax-and-structure-16025610/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-3",
-			title: "Java Essential Training: Objects and APIs",
-			individual: false,
-			duration: "2h 10min",
-			url: "https://www.linkedin.com/learning/java-essential-training-objects-and-apis-16021820/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-spring-1",
-			title: "Learning Spring with Spring Boot",
-			individual: false,
-			duration: "2h 13min",
-			url: "https://www.linkedin.com/learning/learning-spring-with-spring-boot-13886371/",
-			technologiesIds: ["desarrollo-software", "java", "spring"],
-		},
-		{
-			id: "java-4",
-			title: "Learning JDBC (2019)",
-			individual: false,
-			duration: "2h 12min",
-			url: "https://www.linkedin.com/learning/learning-jdbc-2019/",
-			technologiesIds: ["desarrollo-software", "java", "mysql"],
-		},
-		{
-			id: "java-5",
-			title: "Learning Java Collections",
-			individual: false,
-			duration: "3h 10min",
-			url: "https://www.linkedin.com/learning/learning-java-collections/j",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-6",
-			title: "Java Memory Management: Values and References",
-			individual: false,
-			duration: "1h 15min",
-			url: "https://www.linkedin.com/learning/java-memory-management-values-and-references/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-7",
-			title: "Java Memory Management: Garbage Collection, JVM Tuning, and Spotting Memory Leaks",
-			individual: false,
-			duration: "1h 10min",
-			url: "https://www.linkedin.com/learning/java-memory-management-garbage-collection-jvm-tuning-and-spotting-memory-leaks/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-8",
-			title: "Java Exception Handling",
-			individual: false,
-			duration: "1h 10min",
-			url: "https://www.linkedin.com/learning/java-exception-handling/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-9",
-			title: "Java Algorithms",
-			individual: false,
-			duration: "2h 37min",
-			url: "https://www.linkedin.com/learning/java-algorithms/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-10",
-			title: "Java: Data Structures",
-			individual: false,
-			duration: "49min",
-			url: "https://www.linkedin.com/learning/java-data-structures-14403471/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-11",
-			title: "Java: Lambdas and Streams",
-			individual: false,
-			duration: "42min",
-			url: "https://www.linkedin.com/learning/java-lambdas-and-streams/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-12",
-			title: "Java: Generic Classes",
-			individual: false,
-			duration: "2h 38min",
-			url: "https://www.linkedin.com/learning/java-generic-classes-14576260/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-13",
-			title: "Java: Testing with JUnit",
-			individual: false,
-			duration: "2h 25min",
-			url: "https://www.linkedin.com/learning/java-testing-with-junit-14267963/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-14",
-			title: "Java Design Patterns: Structural",
-			individual: false,
-			duration: "1h 38min",
-			url: "https://www.linkedin.com/learning/java-design-patterns-structural/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-15",
-			title: "Java Design Patterns: Behavioral Part 1",
-			individual: false,
-			duration: "1h 16min",
-			url: "https://www.linkedin.com/learning/java-design-patterns-behavioral-part-1/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-16",
-			title: "Java Design Patterns: Behavioral Part 2",
-			individual: false,
-			duration: "56min",
-			url: "https://www.linkedin.com/learning/java-design-patterns-behavioral-part-2/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-17",
-			title: "Continuous Delivery for Cloud Native Java Apps",
-			individual: false,
-			duration: "3h 21min",
-			url: "https://www.linkedin.com/learning/continuous-delivery-for-cloud-native-java-apps/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-18",
-			title: "Nail Your Java Interview",
-			individual: false,
-			duration: "2h 37min",
-			url: "https://www.linkedin.com/learning/nail-your-java-interview-2/",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-19",
-			title: "Java: Advanced Concepts for High-Performance Development",
-			individual: false,
-			duration: "1h 57min",
-			url: "https://www.linkedin.com/learning/java-advanced-concepts-for-high-performance-development",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-20",
-			title: "Introduction to Docker for Java Developers",
-			individual: false,
-			duration: "1h 22min",
-			url: "https://www.linkedin.com/learning/introduction-to-docker-for-java-developers",
-			technologiesIds: ["desarrollo-software", "docker", "java"],
-		},
-		{
-			id: "java-21",
-			title: "Data Science for Java Developers",
-			individual: false,
-			duration: "3h 51min",
-			url: "https://www.linkedin.com/learning/data-science-for-java-developers",
-			technologiesIds: ["desarrollo-software", "ciencia-de-datos", "java"],
-		},
-		{
-			id: "java-22",
-			title: "Advanced Java: Hands-on with Streams, Lambda Expressions, Collections, Generics and More",
-			individual: false,
-			duration: "50min",
-			url: "https://www.linkedin.com/learning/advanced-java-hands-on-with-streams-lambda-expressions-collections-generics-and-more",
-			technologiesIds: ["desarrollo-software", "java"],
-		},
-		{
-			id: "java-spring-1",
-			title: "Learning Spring 6 with Spring Boot 3",
-			individual: false,
-			duration: "1h 49min",
-			url: "https://www.linkedin.com/learning/learning-spring-6-with-spring-boot-3",
-			technologiesIds: ["desarrollo-software", "java", "spring"],
-		},
-		{
-			id: "java-spring-2",
-			title: "Creating Your First Spring Boot Microservice",
-			individual: false,
-			duration: "1h 48min",
-			url: "https://www.linkedin.com/learning/creating-your-first-spring-boot-microservice",
-			technologiesIds: ["desarrollo-software", "java", "spring"],
-		},
-		{
-			id: "java-spring-3",
-			title: "Extending, Securing, and Dockerizing Spring Boot Microservices",
-			individual: false,
-			duration: "2h 4min",
-			url: "https://www.linkedin.com/learning/extending-securing-and-dockerizing-spring-boot-microservices",
-			technologiesIds: ["desarrollo-software", "java", "spring", "docker"],
-		},
-		{
-			id: "java-spring-4",
-			title: "Spring Data",
-			individual: false,
-			duration: "1h 41min",
-			url: "https://www.linkedin.com/learning/spring-data",
-			technologiesIds: ["desarrollo-software", "java", "spring"],
-		},
-		{
-			id: "java-spring-5",
-			title: "Spring Security",
-			individual: false,
-			duration: "1h 31min",
-			url: "https://www.linkedin.com/learning/spring-spring-security-15832928",
-			technologiesIds: ["desarrollo-software", "java", "spring"],
-		},
-		{
-			id: "java-spring-6",
-			title: "Building Full-Stack Apps with React and Spring",
-			individual: false,
-			duration: "1h 26min",
-			url: "https://www.linkedin.com/learning/building-full-stack-apps-with-react-and-spring",
-			technologiesIds: ["desarrollo-software", "java", "spring"],
-		},
-		{
-			id: "sql-1",
-			title: "SQL Course (Sololearn)",
-			individual: true,
-			url: "https://www.sololearn.com/en/learn/courses/le-sql",
-			technologiesIds: ["ciencia-de-datos", "mysql"],
-		},
-		{
-			id: "sql-2",
-			title: "PostgreSQL esencial",
-			individual: true,
-			url: "https://www.linkedin.com/learning/postgresql-esencial-2/",
-			technologiesIds: ["ciencia-de-datos", "postgresql"],
-		},
-		{
-			id: "cpp-1",
-			title: "C Course (Sololearn)",
-			individual: true,
-			url: "https://www.sololearn.com/en/learn/courses/le-c",
-			technologiesIds: ["desarrollo-software", "c-plus-plus"],
-		},
-		{
-			id: "cpp-2",
-			title: "C++ Course (Sololearn)",
-			individual: true,
-			url: "https://www.sololearn.com/en/learn/courses/le-c-plus-plus",
-			technologiesIds: ["desarrollo-software", "c-plus-plus"],
-		},
-		{
-			id: "flutter-1",
-			title: "Flutter: Part 01 Introduction",
-			individual: false,
-			url: "https://www.linkedin.com/learning/flutter-part-01-introduction/",
-			duration: "1h 33min",
-			technologiesIds: ["desarrollo-movil", "flutter"],
-		},
-		{
-			id: "flutter-2",
-			title: "Flutter: Part 02 Building Apps",
-			individual: false,
-			url: "https://www.linkedin.com/learning/flutter-part-02-building-apps/",
-			duration: "1h 23min",
-			technologiesIds: ["desarrollo-movil", "flutter"],
-		},
-		{
-			id: "flutter-3",
-			title: "Flutter: Part 03 Flutter Widgets",
-			individual: false,
-			url: "https://www.linkedin.com/learning/flutter-part-03-flutter-widgets/",
-			duration: "1h 30min",
-			technologiesIds: ["desarrollo-movil", "flutter"],
-		},
-		{
-			id: "flutter-4",
-			title: "Flutter: Part 04 Building an App with State",
-			individual: false,
-			url: "https://www.linkedin.com/learning/flutter-part-04-building-an-app-with-state/",
-			duration: "1h 38min",
-			technologiesIds: ["desarrollo-movil", "flutter"],
-		},
-		{
-			id: "flutter-5",
-			title: "Flutter: Part 05 Flutter and Dart Packages",
-			individual: false,
-			url: "https://www.linkedin.com/learning/flutter-part-05-flutter-and-dart-packages/",
-			duration: "1h 26min",
-			technologiesIds: ["desarrollo-movil", "flutter"],
-		},
-		{
-			id: "nosql",
-			title: "Introduction to NoSQL",
-			individual: false,
-			url: "https://www.linkedin.com/learning/introduction-to-nosql/",
-			duration: "29min",
-			technologiesIds: ["ciencia-de-datos"],
-		},
-		{
-			id: "nosql-2",
-			title: "NoSQL Essential Training",
-			individual: false,
-			duration: "45min",
-			url: "https://www.linkedin.com/learning/nosql-essential-training/",
-			technologiesIds: ["ciencia-de-datos"],
-		},
-		{
-			id: "nosql-3",
-			title: "NoSQL Data Modeling Essential Training",
-			individual: false,
-			duration: "1h 20min",
-			url: "https://www.linkedin.com/learning/nosql-data-modeling-essential-training/",
-			technologiesIds: ["ciencia-de-datos"],
-		},
-		{
-			id: "nosql-4",
-			title: "Cloud NoSQL for SQL Professionals",
-			individual: false,
-			duration: "2h 46min",
-			url: "https://www.linkedin.com/learning/cloud-nosql-for-sql-professionals/",
-			technologiesIds: ["ciencia-de-datos"],
-		},
-		{
-			id: "redis",
-			title: "Learning Redis",
-			individual: false,
-			duration: "1h 56min",
-			url: "https://www.linkedin.com/learning/learning-redis/",
-			technologiesIds: ["ciencia-de-datos", "redis"],
-		},
-		{
-			id: "neo4j",
-			title: "Introduction to Neo4j",
-			individual: false,
-			duration: "1h 25min",
-			url: "https://www.linkedin.com/learning/introduction-to-neo4j/",
-			technologiesIds: ["ciencia-de-datos", "neo4j"],
-		},
-		{
-			id: "neo4j-2",
-			title: "Graph Databases: Neo4j for Complex Data Relationships",
-			individual: false,
-			duration: "1h 18min",
-			url: "https://www.linkedin.com/learning/graph-databases-neo4j-for-complex-data-relationships/",
-			technologiesIds: ["ciencia-de-datos", "neo4j"],
-		},
-		{
-			id: "mongodb",
-			title: "Introduction to MongoDB (2022)",
-			individual: false,
-			duration: "2h 44min",
-			url: "https://www.linkedin.com/learning/introduction-to-mongodb-2022/",
-			technologiesIds: ["ciencia-de-datos", "mongodb"],
-		},
-		{
-			id: "couchbase",
-			title: "Introduction to Couchbase",
-			individual: false,
-			duration: "1h 11min",
-			url: "https://www.linkedin.com/learning/introduction-to-couchbase/",
-			technologiesIds: ["ciencia-de-datos", "couchbase"],
-		},
-		{
-			id: "elasticsearch",
-			title: "Elasticsearch Essential Training (2017)",
-			individual: false,
-			duration: "1h 31min",
-			url: "https://www.linkedin.com/learning/elasticsearch-essential-training-2017/",
-			technologiesIds: ["ciencia-de-datos", "elasticsearch"],
-		},
-		{
-			id: "python-1",
-			title: "Python Essential Training",
-			individual: false,
-			duration: "2h 28min",
-			url: "https://www.linkedin.com/learning/python-esencial-15349768/",
-			technologiesIds: ["desarrollo-software", "python"],
-		},
-		{
-			id: "python-2",
-			title: "Python: Improve Your Development",
-			individual: false,
-			duration: "2h 46min",
-			url: "https://www.linkedin.com/learning/python-mejora-tu-desarrollo/",
-			technologiesIds: ["desarrollo-software", "python"],
-		},
-		{
-			id: "python-3",
-			title: "Advanced Python (2015)",
-			individual: false,
-			duration: "2h 54min",
-			url: "https://www.linkedin.com/learning/python-avanzado-2015/",
-			technologiesIds: ["desarrollo-software", "python"],
-		},
-		{
-			id: "python-4",
-			title: "Python avanzado: clases y funciones",
-			individual: true,
-			duration: "2h 16min",
-			url: "https://www.linkedin.com/learning/advanced-python-classes-and-functions/",
-			technologiesIds: ["desarrollo-software", "python"],
-		},
-		{
-			id: "go-1",
-			title: "Go Escencial",
-			individual: true,
-			duration: "2h 58min",
-			url: "https://www.linkedin.com/learning/go-esencial-3/",
-			technologiesIds: ["desarrollo-software", "go"],
-		},
-		{
-			id: "n8n-1",
-			title: "Build AI Agents and Automate Workflows with n8n",
-			individual: true,
-			duration: "50min",
-			url: "https://www.linkedin.com/learning/build-ai-agents-and-automate-workflows-with-n8n/",
-			technologiesIds: ["ciencia-de-datos", "n8n"],
-		},
-	],
+	// Fuente oficial: CSV en src/data/courses.csv
+	courses: [],
 };
 
+// --- CSV loader for courses ---
+function parseCSV(content: string): string[][] {
+	const rows: string[][] = [];
+	let current: string[] = [];
+	let field = "";
+	let inQuotes = false;
+	for (let i = 0; i < content.length; i++) {
+		const char = content[i];
+		const next = content[i + 1];
+		if (inQuotes) {
+			if (char === '"' && next === '"') {
+				field += '"';
+				i++; // skip escaped quote
+			} else if (char === '"') {
+				inQuotes = false;
+			} else {
+				field += char;
+			}
+		} else if (char === '"') {
+			inQuotes = true;
+		} else if (char === ",") {
+			current.push(field.trim());
+			field = "";
+		} else if (char === "\n") {
+			current.push(field.trim());
+			rows.push(current);
+			current = [];
+			field = "";
+		} else if (char === "\r") {
+			// ignore
+		} else {
+			field += char;
+		}
+	}
+	// flush last field/row
+	if (field.length > 0 || current.length > 0) {
+		current.push(field.trim());
+		rows.push(current);
+	}
+	return rows.filter((r) => r.length && r.some((c) => c !== ""));
+}
+
+function toBoolean(v: string | undefined): boolean {
+	if (!v) return false;
+	const s = v.toLowerCase();
+	return s === "true" || s === "1" || s === "yes" || s === "y";
+}
+
+function loadCoursesFromCSV(csvPath: string): Course[] | null {
+	try {
+		if (!fs.existsSync(csvPath)) return null;
+		const content = fs.readFileSync(csvPath, "utf8");
+		const rows = parseCSV(content);
+		if (rows.length === 0) return null;
+		const header = rows[0].map((h) => h.trim());
+		const idx = (name: string) => header.indexOf(name);
+		const reqCols = ["id", "title", "individual", "technologiesIds"];
+		const missing = reqCols.filter((c) => idx(c) === -1);
+		if (missing.length) {
+			console.warn("CSV missing required columns:", missing.join(", "));
+			return null;
+		}
+		const courses: Course[] = [];
+		for (let i = 1; i < rows.length; i++) {
+			const r = rows[i];
+			if (!r || r.length === 0) continue;
+			const get = (name: string) => r[idx(name)] ?? "";
+			const techs = get("technologiesIds")
+				.split(/\s*[|;]\s*/)
+				.filter(Boolean) as StackIds[];
+			const course: Course = {
+				id: get("id"),
+				title: get("title"),
+				individual: toBoolean(get("individual")),
+				description: get("description") || undefined,
+				duration: get("duration") || undefined,
+				url: get("url") || undefined,
+				technologiesIds: techs,
+			};
+			if (!course.id || !course.title) continue;
+			courses.push(course);
+		}
+		return courses.length ? courses : null;
+	} catch (e) {
+		console.error("Error reading courses CSV:", e);
+		return null;
+	}
+}
+
 export async function GET() {
-	return NextResponse.json(jsonData);
+	const csvPath = path.join(process.cwd(), "src", "data", "courses.csv");
+	const csvCourses = loadCoursesFromCSV(csvPath);
+	const data: Education = {
+		...jsonData,
+		courses: csvCourses ?? [],
+	};
+	return NextResponse.json(data);
 }

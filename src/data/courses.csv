@@ -1,0 +1,126 @@
+id,individual,title,description,duration,url,technologiesIds
+0,true,On-Page SEO Training Course (Udemy),,2h,,desarrollo-web
+1,true,Career Essentials in System Administration (Microsoft & LinkedIn),,5h,https://www.linkedin.com/learning/career-essentials-in-system-administration-by-microsoft-and-linkedin/,seguridad-y-redes
+2,true,Networking Basics (Cisco Networking Academy),,22h,https://www.netacad.com/courses/networking-basics?courseLang=en-US,seguridad-y-redes
+3,true,Networking Devices and Initial Configuration (Cisco Networking Academy),,22h,https://www.netacad.com/courses/networking-devices-and-initial-configuration?courseLang=en-US,seguridad-y-redes
+4,true,Introducción a la Seguridad Cibernética (Cisco Networking Academy),,6h,https://www.netacad.com/courses/introduction-to-cybersecurity?courseLang=en-US,seguridad-y-redes
+5,true,"Seminario: Conceptos Prácticos de la seguridad en Informática (FCA.02.18, UNDEF)",,12h,,seguridad-y-redes
+node-1,false,Fundamentos del desarrollo web: Full Stack o Front-end,,55 min,https://www.linkedin.com/learning/fundamentos-del-desarrollo-web-full-stack-o-front-end/,nodejs
+node-2,false,Desarrollo full stack práctico: Configuración profesional de proyectos,,3h 49min,https://www.linkedin.com/learning/desarrollo-full-stack-practico-configuracion-profesional-de-proyectos/,nodejs
+git-1,false,GitHub para programadores,,1h 53min,https://www.linkedin.com/learning/github-para-programadores-2/,git
+node-3,false,Node.js esencial,,3h 42min,https://www.linkedin.com/learning/node-js-esencial-2018/,nodejs
+web-1,true,Desarrollo de proyectos web avanzado,,2h 24min,https://www.linkedin.com/learning/desarrollo-de-proyectos-web-avanzado/,desarrollo-web|ui-ux|git
+node-4,false,Node.js avanzado,,3h 6min,https://www.linkedin.com/learning/node-js-avanzado/,nodejs
+node-5,false,Node.js: Trucos,,1h 53min,https://www.linkedin.com/learning/node-js-trucos/,nodejs
+angular-1,false,AngularJS práctico: Web app con NodeJS y MongoDB,,2h 35min,https://www.linkedin.com/learning/angularjs-practico-web-app-con-nodejs-y-mongodb/,angular|nodejs|mongodb
+javascript-1,false,JavaScript esencial (2017),,5h 27min,https://www.linkedin.com/learning/javascript-esencial-2017/,javascript
+javascript-2,false,JavaScript: Errores comunes y cómo solucionarlos,,2h 18min,https://www.linkedin.com/learning/javascript-errores-comunes-y-como-solucionarlos/,javascript
+javascript-3,false,JavaScript avanzado: Expresiones regulares,,1h 34min,https://www.linkedin.com/learning/javascript-avanzado-expresiones-regulares/,javascript
+javascript-4,false,JavaScript avanzado: Buenas prácticas,,1h 49min,https://www.linkedin.com/learning/javascript-avanzado-buenas-practicas/,javascript
+javascript-5,false,JavaScript: Trucos,,1h 19min,https://www.linkedin.com/learning/javascript-trucos/,javascript
+javascript-6,false,JavaScript: TDD y pruebas unitarias esencial,,2h 14min,https://www.linkedin.com/learning/javascript-tdd-y-pruebas-unitarias-esencial/,javascript
+javascript-7,false,JavaScript: Programación orientada a objetos,,2h 2min,https://www.linkedin.com/learning/javascript-programacion-orientada-a-objetos/,javascript
+tests-1,true,End-to-End JavaScript Testing with Cypress.io (2019),,1h 29min,https://www.linkedin.com/learning/end-to-end-javascript-testing-with-cypress-io-2019/,desarrollo-web|javascript
+frontend-1,false,Desarrollo web front-end esencial,,5h 2min,https://www.linkedin.com/learning/desarrollo-web-front-end-esencial/,html-css|javascript|jquery
+ui-ux-1,false,Diseño de interfaz (UI) esencial,,2h 10min,https://www.linkedin.com/learning/diseno-de-interfaz-ui-esencial/,ui-ux
+ui-ux-2,false,Experiencia de usuario (UX) esencial,,1h 44min,https://www.linkedin.com/learning/experiencia-de-usuario-ux-esencial/,ui-ux
+ui-ux-3,false,Maquetación y tipografía para web,,2h 11min,https://www.linkedin.com/learning/maquetacion-y-tipografia-para-web/,ui-ux
+html-css-1,false,Integración HTML y CSS esencial,,2h 51min,https://www.linkedin.com/learning/integracion-html-y-css-esencial/,html-css
+html-css-2,false,Integración HTML y CSS avanzado,,1h 29min,https://www.linkedin.com/learning/integracion-html-y-css-avanzado/,html-css
+adobe-xd-1,false,Adobe XD CC esencial,,2h 8min,https://www.linkedin.com/learning/adobe-xd-cc-esencial/,ui-ux
+adobe-xd-2,false,Adobe XD CC avanzado,,2h 33min,https://www.linkedin.com/learning/adobe-xd-cc-avanzado/,ui-ux
+ui-ux-4,false,Los cinco pasos del proceso creativo,,19min,https://www.linkedin.com/learning/los-cinco-pasos-del-proceso-creativo/,ui-ux
+ui-ux-5,false,Pensamiento crítico (2017),,1h 6min,https://www.linkedin.com/learning/pensamiento-critico-2017/,ui-ux
+html-1,false,HTML esencial (2015),,4h 29min,https://www.linkedin.com/learning/html-esencial/,html-css
+html-2,false,HTML avanzado,,3h 44min,https://www.linkedin.com/learning/html-avanzado/,html-css
+html-3,false,Aprende semántica web,,56min,https://www.linkedin.com/learning/aprende-semantica-web/,html-css
+css-1,false,CSS esencial,,2h 39min,https://www.linkedin.com/learning/css-esencial/,html-css
+css-2,false,CSS avanzado,,2h 3min,https://www.linkedin.com/learning/css-avanzado/,html-css
+css-3,false,CSS con SASS escencial,,2h 11min,https://www.linkedin.com/learning/css-con-sass-esencial/,html-css
+react-1,false,React esencial (2019),,2h 48min,https://www.linkedin.com/learning/react-esencial-2019/,reactjs
+react-2,true,React Hooks esencial,,2h 46min,https://www.linkedin.com/learning/react-hooks-esencial/,desarrollo-web|reactjs
+react-3,true,React avanzado 1,,2h 12min,https://www.linkedin.com/learning/react-avanzado-1/,desarrollo-web|reactjs
+react-4,false,REACT práctico: Interfaz para aplicación web de gestión deportiva,,1h 57min,https://www.linkedin.com/learning/react-practico-interfaz-para-aplicacion-web-de-gestion-deportiva/,desarrollo-web|reactjs
+react-native-1,false,React native práctico: aplicación móvil de usuario para gestión deportiva,,1h 42min,https://www.linkedin.com/learning/react-native-practico-aplicacion-movil-de-usuario-para-gestion-deportiva/,desarrollo-web|react-native
+rxjs-1,false,RxJS práctico: Interacción con aplicación web de gestión deportiva,,1h 40min,https://www.linkedin.com/learning/rxjs-practico-interaccion-con-aplicacion-web-de-gestion-deportiva/,rxjs
+native-script-1,false,NativeScript práctico: Administración móvil para gestión deportiva,,2h 12min,https://www.linkedin.com/learning/nativescript-practico-administracion-movil-para-gestion-deportiva/,native-script
+angular-2,false,Angular esencial,,4h 14min,https://www.linkedin.com/learning/angular-esencial-14069833/,angular
+typescript-1,false,TypeScript esencial,,2h 21min,https://www.linkedin.com/learning/typescript-esencial/,typescript
+typescript-2,true,TypeScript avanzado,,2h 45min,https://www.linkedin.com/learning/typescript-avanzado/,typescript
+vue-1,false,Vue.js esencial (2019),,3h 37min,https://www.linkedin.com/learning/vue-js-esencial-2019/,vuejs
+vue-2,true,Vue avanzado 1,,1h 55min,https://www.linkedin.com/learning/vue-avanzado-1/,vuejs
+vue-3,true,Vue avanzado 2,,2h 25min,https://www.linkedin.com/learning/vue-avanzado-2/,desarrollo-web|vuejs
+vue-4,true,Learning Nuxt.js,,1h 32min,https://www.linkedin.com/learning/learning-nuxt-js/,desarrollo-web|vuejs|nuxtjs
+vue-5,false,Vue práctico: Desarrollo de interfaz web para gestión deportiva,,2h 1min,https://www.linkedin.com/learning/vue-practico-desarrollo-de-interfaz-web-para-gestion-deportiva/,desarrollo-web|vuejs
+scrum-1,false,Aprende Scrum,,1h 32min,https://www.linkedin.com/learning/aprende-scrum/,scrum
+scrum-2,false,SCRUM: Roles,,1h 41min,https://www.linkedin.com/learning/scrum-roles/,scrum
+scrum-3,true,Scrum Foundation Professional Certificate SFPC (v2020 - expired),,,https://www.credly.com/badges/26b784bc-c4ce-4e32-9c14-a8beaa404922/public_url,scrum
+gestion-1,false,Getting Things Done. Organízate con eficacia,,1h 32min,https://www.linkedin.com/learning/getting-things-done-organizate-con-eficacia/,genericos
+genericos-1,false,Fundamentos del teletrabajo,,1h 22min,https://www.linkedin.com/learning/fundamentos-del-teletrabajo/,genericos
+genericos-2,false,Prepara tu entrevista de trabajo para un puesto en programación,,2h 10min,https://www.linkedin.com/learning/prepara-tu-entrevista-de-trabajo-para-un-puesto-en-programacion/,genericos
+genericos-3,false,Pensamiento computacional,,1h 44min,https://www.linkedin.com/learning/pensamiento-computacional/,desarrollo-software
+genericos-4,false,Fundamentos esenciales de la programación,,2h 11min,https://www.linkedin.com/learning/fundamentos-esenciales-de-la-programacion-2/,desarrollo-software
+genericos-5,false,Fundamentos de la programación: Diseño orientado a objetos,,1h 26min,https://www.linkedin.com/learning/fundamentos-de-la-programacion-diseno-orientado-a-objetos-9062878/,desarrollo-software
+genericos-6,false,Marketing online: Creación de un plan integral,,53min,https://www.linkedin.com/learning/marketing-online-creacion-de-un-plan-integral/,genericos
+genericos-7,false,Introducción al diseño de ecosistemas,,1h 11min,https://www.linkedin.com/learning/introduccion-al-diseno-de-ecosistemas/,genericos
+genericos-8,false,Fundamentos esenciales del marketing digital,,2h 7min,https://www.linkedin.com/learning/fundamentos-esenciales-del-marketing-digital/,genericos
+genericos-9,false,Aprende a programar ¡en cualquier lenguaje!,,2h 50min,https://www.linkedin.com/learning/aprende-a-programar-en-cualquier-lenguaje/,desarrollo-software
+loopback-1,false,Loopback práctico: Desarrolla una API REST para gestión deportiva,,2h 58min,https://www.linkedin.com/learning/loopback-practico-desarrolla-una-api-rest-para-gestion-deportiva/,loopback-4
+electron-1,false,Electron práctico: Aplicación escritorio para gestión deportiva,,2h 5min,https://www.linkedin.com/learning/electron-practico-aplicacion-escritorio-para-gestion-deportiva/,electron
+angular-3,false,Angular avanzado,,2h 39min,https://www.linkedin.com/learning/angular-avanzado/,angular
+angular-4,false,Angular: Trucos,,2h 1min,https://www.linkedin.com/learning/angular-trucos/,angular
+angular-5,false,Angular práctico: Desarrolla una aplicación web para gestión deportiva,,3h 6min,https://www.linkedin.com/learning/angular-practico-desarrolla-una-aplicacion-web-para-gestion-deportiva/,angular
+java-1,true,JAVA Course (Sololearn),,,https://www.sololearn.com/en/learn/courses/le-java,desarrollo-software|java
+java-2,false,Java Essential Training: Syntax and Structure,,2h 28min,https://www.linkedin.com/learning/java-essential-training-syntax-and-structure-16025610/,desarrollo-software|java
+java-3,false,Java Essential Training: Objects and APIs,,2h 10min,https://www.linkedin.com/learning/java-essential-training-objects-and-apis-16021820/,desarrollo-software|java
+java-spring-1,false,Learning Spring with Spring Boot,,2h 13min,https://www.linkedin.com/learning/learning-spring-with-spring-boot-13886371/,desarrollo-software|java|spring
+java-4,false,Learning JDBC (2019),,2h 12min,https://www.linkedin.com/learning/learning-jdbc-2019/,desarrollo-software|java|mysql
+java-5,false,Learning Java Collections,,3h 10min,https://www.linkedin.com/learning/learning-java-collections/j,desarrollo-software|java
+java-6,false,Java Memory Management: Values and References,,1h 15min,https://www.linkedin.com/learning/java-memory-management-values-and-references/,desarrollo-software|java
+java-7,false,"Java Memory Management: Garbage Collection, JVM Tuning, and Spotting Memory Leaks",,1h 10min,https://www.linkedin.com/learning/java-memory-management-garbage-collection-jvm-tuning-and-spotting-memory-leaks/,desarrollo-software|java
+java-8,false,Java Exception Handling,,1h 10min,https://www.linkedin.com/learning/java-exception-handling/,desarrollo-software|java
+java-9,false,Java Algorithms,,2h 37min,https://www.linkedin.com/learning/java-algorithms/,desarrollo-software|java
+java-10,false,Java: Data Structures,,49min,https://www.linkedin.com/learning/java-data-structures-14403471/,desarrollo-software|java
+java-11,false,Java: Lambdas and Streams,,42min,https://www.linkedin.com/learning/java-lambdas-and-streams/,desarrollo-software|java
+java-12,false,Java: Generic Classes,,2h 38min,https://www.linkedin.com/learning/java-generic-classes-14576260/,desarrollo-software|java
+java-13,false,Java: Testing with JUnit,,2h 25min,https://www.linkedin.com/learning/java-testing-with-junit-14267963/,desarrollo-software|java
+java-14,false,Java Design Patterns: Structural,,1h 38min,https://www.linkedin.com/learning/java-design-patterns-structural/,desarrollo-software|java
+java-15,false,Java Design Patterns: Behavioral Part 1,,1h 16min,https://www.linkedin.com/learning/java-design-patterns-behavioral-part-1/,desarrollo-software|java
+java-16,false,Java Design Patterns: Behavioral Part 2,,56min,https://www.linkedin.com/learning/java-design-patterns-behavioral-part-2/,desarrollo-software|java
+java-17,false,Continuous Delivery for Cloud Native Java Apps,,3h 21min,https://www.linkedin.com/learning/continuous-delivery-for-cloud-native-java-apps/,desarrollo-software|java
+java-18,false,Nail Your Java Interview,,2h 37min,https://www.linkedin.com/learning/nail-your-java-interview-2/,desarrollo-software|java
+java-19,false,Java: Advanced Concepts for High-Performance Development,,1h 57min,https://www.linkedin.com/learning/java-advanced-concepts-for-high-performance-development,desarrollo-software|java
+java-20,false,Introduction to Docker for Java Developers,,1h 22min,https://www.linkedin.com/learning/introduction-to-docker-for-java-developers,desarrollo-software|docker|java
+java-21,false,Data Science for Java Developers,,3h 51min,https://www.linkedin.com/learning/data-science-for-java-developers,desarrollo-software|ciencia-de-datos|java
+java-22,false,"Advanced Java: Hands-on with Streams, Lambda Expressions, Collections, Generics and More",,50min,https://www.linkedin.com/learning/advanced-java-hands-on-with-streams-lambda-expressions-collections-generics-and-more,desarrollo-software|java
+java-spring-1,false,Learning Spring 6 with Spring Boot 3,,1h 49min,https://www.linkedin.com/learning/learning-spring-6-with-spring-boot-3,desarrollo-software|java|spring
+java-spring-2,false,Creating Your First Spring Boot Microservice,,1h 48min,https://www.linkedin.com/learning/creating-your-first-spring-boot-microservice,desarrollo-software|java|spring
+java-spring-3,false,"Extending, Securing, and Dockerizing Spring Boot Microservices",,2h 4min,https://www.linkedin.com/learning/extending-securing-and-dockerizing-spring-boot-microservices,desarrollo-software|java|spring|docker
+java-spring-4,false,Spring Data,,1h 41min,https://www.linkedin.com/learning/spring-data,desarrollo-software|java|spring
+java-spring-5,false,Spring Security,,1h 31min,https://www.linkedin.com/learning/spring-spring-security-15832928,desarrollo-software|java|spring
+java-spring-6,false,Building Full-Stack Apps with React and Spring,,1h 26min,https://www.linkedin.com/learning/building-full-stack-apps-with-react-and-spring,desarrollo-software|java|spring
+sql-1,true,SQL Course (Sololearn),,,https://www.sololearn.com/en/learn/courses/le-sql,ciencia-de-datos|mysql
+sql-2,true,PostgreSQL esencial,,,https://www.linkedin.com/learning/postgresql-esencial-2/,ciencia-de-datos|postgresql
+cpp-1,true,C Course (Sololearn),,,https://www.sololearn.com/en/learn/courses/le-c,desarrollo-software|c-plus-plus
+cpp-2,true,C++ Course (Sololearn),,,https://www.sololearn.com/en/learn/courses/le-c-plus-plus,desarrollo-software|c-plus-plus
+flutter-1,false,Flutter: Part 01 Introduction,,1h 33min,https://www.linkedin.com/learning/flutter-part-01-introduction/,desarrollo-movil|flutter
+flutter-2,false,Flutter: Part 02 Building Apps,,1h 23min,https://www.linkedin.com/learning/flutter-part-02-building-apps/,desarrollo-movil|flutter
+flutter-3,false,Flutter: Part 03 Flutter Widgets,,1h 30min,https://www.linkedin.com/learning/flutter-part-03-flutter-widgets/,desarrollo-movil|flutter
+flutter-4,false,Flutter: Part 04 Building an App with State,,1h 38min,https://www.linkedin.com/learning/flutter-part-04-building-an-app-with-state/,desarrollo-movil|flutter
+flutter-5,false,Flutter: Part 05 Flutter and Dart Packages,,1h 26min,https://www.linkedin.com/learning/flutter-part-05-flutter-and-dart-packages/,desarrollo-movil|flutter
+nosql,false,Introduction to NoSQL,,29min,https://www.linkedin.com/learning/introduction-to-nosql/,ciencia-de-datos
+nosql-2,false,NoSQL Essential Training,,45min,https://www.linkedin.com/learning/nosql-essential-training/,ciencia-de-datos
+nosql-3,false,NoSQL Data Modeling Essential Training,,1h 20min,https://www.linkedin.com/learning/nosql-data-modeling-essential-training/,ciencia-de-datos
+nosql-4,false,Cloud NoSQL for SQL Professionals,,2h 46min,https://www.linkedin.com/learning/cloud-nosql-for-sql-professionals/,ciencia-de-datos
+redis,false,Learning Redis,,1h 56min,https://www.linkedin.com/learning/learning-redis/,ciencia-de-datos|redis
+neo4j,false,Introduction to Neo4j,,1h 25min,https://www.linkedin.com/learning/introduction-to-neo4j/,ciencia-de-datos|neo4j
+neo4j-2,false,Graph Databases: Neo4j for Complex Data Relationships,,1h 18min,https://www.linkedin.com/learning/graph-databases-neo4j-for-complex-data-relationships/,ciencia-de-datos|neo4j
+mongodb,false,Introduction to MongoDB (2022),,2h 44min,https://www.linkedin.com/learning/introduction-to-mongodb-2022/,ciencia-de-datos|mongodb
+couchbase,false,Introduction to Couchbase,,1h 11min,https://www.linkedin.com/learning/introduction-to-couchbase/,ciencia-de-datos|couchbase
+elasticsearch,false,Elasticsearch Essential Training (2017),,1h 31min,https://www.linkedin.com/learning/elasticsearch-essential-training-2017/,ciencia-de-datos|elasticsearch
+python-1,false,Python Essential Training,,2h 28min,https://www.linkedin.com/learning/python-esencial-15349768/,desarrollo-software|python
+python-2,false,Python: Improve Your Development,,2h 46min,https://www.linkedin.com/learning/python-mejora-tu-desarrollo/,desarrollo-software|python
+python-3,false,Advanced Python (2015),,2h 54min,https://www.linkedin.com/learning/python-avanzado-2015/,desarrollo-software|python
+python-4,true,Python avanzado: clases y funciones,,2h 16min,https://www.linkedin.com/learning/advanced-python-classes-and-functions/,desarrollo-software|python
+go-1,true,Go Escencial,,2h 58min,https://www.linkedin.com/learning/go-esencial-3/,desarrollo-software|go
+n8n-1,true,Build AI Agents and Automate Workflows with n8n,,50min,https://www.linkedin.com/learning/build-ai-agents-and-automate-workflows-with-n8n/,ciencia-de-datos|n8n
