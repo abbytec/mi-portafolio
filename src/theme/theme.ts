@@ -93,11 +93,6 @@ const theme = extendTheme({
 				"--font-lora": lora.style.fontFamily,
 			},
 			".blocky-style": blockyStyle,
-			div: {
-				_focusVisible: {
-					outline: "none!important",
-				},
-			},
 			body: {
 				bg: "bg",
 				color: "text",
@@ -155,6 +150,10 @@ const theme = extendTheme({
 				fontWeight: "bold",
 				fontFamily: "var(--font-merriweather), serif",
 				fontSize: "16px",
+				_focusVisible: {
+					outline: "3px solid var(--chakra-colors-accent)",
+					outlineOffset: "2px",
+				},
 				_hover: {
 					color: "var(--chakra-colors-accent)",
 					textDecoration: "none!important",

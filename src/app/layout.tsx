@@ -14,19 +14,21 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-	return (
-		<html lang="es">
-			<head></head>
-			<body className={`${merriweather.variable} ${caveat.variable} ${lora.variable}`}>
-				<Providers>
-					<PortalManager>
-						<Header />
-						<main style={{ padding: "1rem" }}>{children}</main>
-						<NextSectionBtn />
-						<Footer />
-					</PortalManager>
-				</Providers>
-			</body>
-		</html>
-	);
+    return (
+        <html lang="es">
+            <head></head>
+            <body className={`${merriweather.variable} ${caveat.variable} ${lora.variable}`}>
+                <Providers>
+                    <PortalManager>
+                        <Header />
+                        {/* Skip to content link for keyboard users */}
+                        <a href="#content" className="skip-link">Saltar al contenido principal</a>
+                        <main id="content" style={{ padding: "1rem" }}>{children}</main>
+                        <NextSectionBtn />
+                        <Footer />
+                    </PortalManager>
+                </Providers>
+            </body>
+        </html>
+    );
 }

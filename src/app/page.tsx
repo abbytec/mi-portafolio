@@ -45,29 +45,33 @@ export default function Home() {
 
 	return (
 		<Container maxW={{ base: "container.xl" }} pt={4}>
-			<Stack direction={{ base: "column", md: "row" }} spacing={10}>
-				<Box
-					h="220px"
-					w="185px!important"
-					overflow="hidden"
-					rounded="lg"
-					cursor="pointer"
-					mx={{ base: "auto", md: "0" }} // Centrado horizontal en móvil
-					position="relative"
-					onClick={onOpen}>
-					<Image src="/pfp.jpg" alt="Mi Foto" objectFit="cover" w="100%" h="100%" transform={"scaleX(-1)"} />
-					<Icon
-						as={FaSearch}
-						position="absolute"
-						top="8px"
-						right="8px"
-						boxSize={6}
-						color="gray.100"
-						bg="rgba(0, 0, 0, 0.6)"
-						p={1}
-						rounded="full"
-					/>
-				</Box>
+            <Stack direction={{ base: "column", md: "row" }} spacing={10}>
+                <Button
+                    h="220px"
+                    w="185px!important"
+                    overflow="hidden"
+                    rounded="lg"
+                    mx={{ base: "auto", md: "0" }} // Centrado horizontal en móvil
+                    position="relative"
+                    onClick={onOpen}
+                    aria-label="Ampliar foto de perfil"
+                    variant="ghost"
+                    p={0}
+                >
+                    <Image src="/pfp.jpg" alt="Foto de perfil" objectFit="cover" w="100%" h="100%" transform={"scaleX(-1)"} />
+                    <Icon
+                        as={FaSearch}
+                        position="absolute"
+                        top="8px"
+                        right="8px"
+                        boxSize={6}
+                        color="gray.100"
+                        bg="rgba(0, 0, 0, 0.6)"
+                        p={1}
+                        rounded="full"
+                        aria-hidden="true"
+                    />
+                </Button>
 				{/* Modal con la imagen grande */}
 				<Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
 					<ModalOverlay />
@@ -77,9 +81,9 @@ export default function Home() {
 						exit={{ opacity: 0, rotate: 0, scaleX: -1 }}
 						transition={{ duration: 0.5, ease: "easeOut" }}>
 						<ModalCloseButton color={"accent"} fontSize={"large"} />
-						<ModalBody p={0}>
-							<Image src="/pfp.jpg" alt="Mi Foto Grande" objectFit="contain" w="100%" h="auto" />
-						</ModalBody>
+                        <ModalBody p={0}>
+                            <Image src="/pfp.jpg" alt="Foto de perfil ampliada" objectFit="contain" w="100%" h="auto" />
+                        </ModalBody>
 					</MotionModalContent>
 				</Modal>
 				<VStack spacing={6} textAlign="center">
@@ -109,7 +113,7 @@ export default function Home() {
 				</Text>
 				<Text mb={4} style={{ textIndent: "2em" }}>
 					Soy secretaria en{" "}
-					<Link href="https://www.instagram.com/rotaractvillacarlospaz/">
+					<Link href="https://www.instagram.com/rotaractvillacarlospaz/" isExternal aria-label="Abrir Instagram de Rotaract (se abre en una pestaña nueva)">
 						<strong>Rotaract Club Villa Carlos Paz</strong>
 					</Link>
 					, ONG dedicada al servicio a la comunidad, liderazgo, compañerismo e internacionalización. Hemos organizado eventos de

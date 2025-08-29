@@ -117,14 +117,7 @@ export default function EducationPage() {
 		);
 	};
 
-	// --- Función para abrir el modal con los coursesIds de un path específico ---
-	const handleOpenCoursesModal = (event: React.MouseEvent<HTMLAnchorElement>, coursesIds: string[]) => {
-		event.preventDefault();
-		setSelectedPathCourses(coursesIds);
-		onOpen();
-	};
-
-	if (!education) return <div>Loading...</div>;
+	if (!education) return <output aria-live="polite">Cargando…</output>;
 
 	return (
 		<Container maxW={{ base: "container.xl" }} pt={4}>
@@ -238,14 +231,18 @@ export default function EducationPage() {
 									</CardBody>
 									{path.coursesIds.length > 0 && (
 										<CardFooter justify={"flex-end"} pt={0}>
-											<Link
-												href={"#"}
+											<Button
 												size="sm"
-												colorScheme="blue"
-												onClick={(e) => handleOpenCoursesModal(e, path.coursesIds)}
-												color={"accent"}>
+												variant="link"
+												color={"accent"}
+												aria-haspopup="dialog"
+												aria-controls="courses-modal"
+												onClick={() => {
+													setSelectedPathCourses(path.coursesIds);
+													onOpen();
+												}}>
 												Ver itinerario &gt;
-											</Link>
+											</Button>
 										</CardFooter>
 									)}
 								</Card>
@@ -292,7 +289,7 @@ export default function EducationPage() {
 			{/* Modal para mostrar los cursos de la ruta seleccionada */}
 			<Modal isOpen={isOpen} onClose={onClose}>
 				<ModalOverlay />
-				<ModalContent bg="panel">
+				<ModalContent bg="panel" id="courses-modal">
 					<ModalHeader>Cursos de la Ruta</ModalHeader>
 					<ModalCloseButton />
 					<ModalBody background={"cardBg"}>
