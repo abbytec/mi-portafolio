@@ -36,35 +36,37 @@ export default function NextSectionButton() {
 	}
 
 	// Para desktop, posición fija a la derecha; en mobile se coloca debajo del main
-	if (isDesktop) {
-		return (
-			<NextLink
-				href={nextHref}
-				passHref
-				style={{ display: "flex", flexDirection: "column", position: "fixed", right: 10, bottom: "50%", alignItems: "center" }}>
-				{label}
-				<br />
-				{icon}
-			</NextLink>
-		);
+    if (isDesktop) {
+        return (
+            <NextLink
+                href={nextHref}
+                passHref
+                aria-label={label}
+                style={{ display: "flex", flexDirection: "column", position: "fixed", right: 10, bottom: "50%", alignItems: "center" }}>
+                {label}
+                <br />
+                {icon}
+            </NextLink>
+        );
 	}
 
-	return (
-		<NextLink
-			href={nextHref}
-			passHref
-			style={{
-				display: "flex",
-				flexDirection: "column",
-				margin: "0 auto",
-				padding: "1rem",
-				right: 10,
-				bottom: "50%",
-				alignItems: "center",
-			}}>
-			{label}
-			<br />
-			{icon}
-		</NextLink>
-	);
+    return (
+        <NextLink
+            href={nextHref}
+            passHref
+            aria-label={label}
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                margin: "0 auto",
+                padding: "1rem",
+                right: 10,
+                bottom: "50%",
+                alignItems: "center",
+            }}>
+            {label}
+            <br />
+            {icon}
+        </NextLink>
+    );
 }

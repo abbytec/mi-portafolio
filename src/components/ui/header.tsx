@@ -2,22 +2,22 @@
 "use client";
 
 import {
-	useColorMode,
-	Flex,
-	IconButton,
-	Breadcrumb,
-	BreadcrumbItem,
-	BreadcrumbLink,
-	useDisclosure,
-	Drawer,
-	DrawerOverlay,
-	DrawerContent,
-	DrawerCloseButton,
-	DrawerHeader,
-	DrawerBody,
-	VStack,
-	Box,
+    useColorMode,
+    Flex,
+    IconButton,
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    useDisclosure,
+    Drawer,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerCloseButton,
+    DrawerHeader,
+    DrawerBody,
+    VStack,
 } from "@chakra-ui/react";
+import { Link as CkLink } from "@chakra-ui/next-js";
 import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
@@ -49,15 +49,17 @@ export default function Header() {
 
 					return (
 						<BreadcrumbItem key={link.href} fontSize="17px">
-							<BreadcrumbLink
-								as={NextLink}
-								href={link.href}
-								fontSize="17px"
-								passHref
-								onClick={playClickSound}
-								color={isActive ? "var(--chakra-colors-accent)" : "var(--chakra-colors-text)"}>
-								{link.label}
-							</BreadcrumbLink>
+                        <BreadcrumbLink
+                            as={NextLink}
+                            href={link.href}
+                            fontSize="17px"
+                            passHref
+                            onClick={playClickSound}
+                            color={isActive ? "var(--chakra-colors-accent)" : "var(--chakra-colors-text)"}
+                            aria-current={isActive ? "page" : undefined}
+                        >
+                            {link.label}
+                        </BreadcrumbLink>
 						</BreadcrumbItem>
 					);
 				})}
@@ -75,44 +77,39 @@ export default function Header() {
 			/>
 
 			{/* Drawer a pantalla completa para mostrar el menú en móviles */}
-			<Drawer isOpen={isOpen} onClose={onClose} placement="left" size="full">
-				<DrawerOverlay />
-				<DrawerContent bg="var(--chakra-colors-panel)">
-					<DrawerCloseButton onClick={playClickSound} />
-					<DrawerHeader borderBottomWidth="1px">Menú</DrawerHeader>
-					<DrawerBody>
-						<VStack align="stretch" spacing={4}>
-							{navLinks.map((link) => {
-								const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
-								return (
-									<NextLink href={link.href} key={link.href} passHref>
-										{/* 
-               Puedes usar <Button>, <Box> o <Link> de Chakra 
-               con estilos a tu gusto
-            */}
-										<Box
-											as="button"
-											onClick={() => {
-												playClickSound();
-												onClose();
-											}}
-											width="100%" // O w="full"
-											py={3}
-											fontSize="xl"
-											textAlign="center"
-											// Agrega más estilos si deseas
-											bg={isActive ? "var(--chakra-colors-cardBg)" : "transparent"}
-											color={isActive ? "var(--chakra-colors-accent)" : "inherit"}
-											_hover={{ bg: "var(--chakra-colors-cardBg)", color: "var(--chakra-colors-accent)" }}>
-											{link.label}
-										</Box>
-									</NextLink>
-								);
-							})}
-						</VStack>
-					</DrawerBody>
-				</DrawerContent>
-			</Drawer>
+            <Drawer isOpen={isOpen} onClose={onClose} placement="left" size="full">
+                <DrawerOverlay />
+                <DrawerContent bg="var(--chakra-colors-panel)">
+                    <DrawerCloseButton onClick={playClickSound} />
+                    <DrawerHeader borderBottomWidth="1px">Menú</DrawerHeader>
+                    <DrawerBody>
+                        <VStack align="stretch" spacing={4}>
+                            {navLinks.map((link) => {
+                                const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+                                return (
+                                    <CkLink
+                                        key={link.href}
+                                        href={link.href}
+                                        onClick={() => {
+                                            playClickSound();
+                                            onClose();
+                                        }}
+                                        aria-current={isActive ? "page" : undefined}
+                                        p={3}
+                                        textAlign="center"
+                                        fontSize="xl"
+                                        bg={isActive ? "var(--chakra-colors-cardBg)" : "transparent"}
+                                        color={isActive ? "var(--chakra-colors-accent)" : "inherit"}
+                                        _hover={{ bg: "var(--chakra-colors-cardBg)", color: "var(--chakra-colors-accent)" }}
+                                    >
+                                        {link.label}
+                                    </CkLink>
+                                );
+                            })}
+                        </VStack>
+                    </DrawerBody>
+                </DrawerContent>
+            </Drawer>
 
 			{/* Botón para alternar el modo claro/oscuro */}
 			<IconButton

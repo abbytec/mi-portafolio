@@ -81,7 +81,8 @@ export type StackIds =
 	| "git"
 	| "jquery"
 	| "docker"
-	| "kubernetes";
+	| "kubernetes"
+	| "n8n";
 
 const jsonData: Education = {
 	paths: [
@@ -322,6 +323,7 @@ const jsonData: Education = {
 		{ id: "scrum", name: "Scrum", color: "#27ae60" },
 		{ id: "git", name: "Git", color: "#f05032" },
 		{ id: "docker", name: "Docker", color: "#2496ed" },
+		{ id: "n8n", name: "n8n", color: "#2c3e50" },
 	],
 	courses: [
 		{
@@ -1309,6 +1311,14 @@ const jsonData: Education = {
 			duration: "2h 58min",
 			url: "https://www.linkedin.com/learning/go-esencial-3/",
 			technologiesIds: ["desarrollo-software", "go"],
+		},
+		{
+			id: "n8n-1",
+			title: "Build AI Agents and Automate Workflows with n8n",
+			individual: true,
+			duration: "50min",
+			url: "https://www.linkedin.com/learning/build-ai-agents-and-automate-workflows-with-n8n/",
+			technologiesIds: ["ciencia-de-datos", "n8n"],
 		},
 	],
 };
