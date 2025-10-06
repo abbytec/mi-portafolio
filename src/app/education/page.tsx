@@ -100,20 +100,19 @@ export default function EducationPage() {
 			.filter(Boolean) as StackTechnology[];
 
 		return (
-			<Text display={"flex"} flexWrap={"wrap"} mb={6}>
+			<Box display={"flex"} flexWrap={"wrap"} mb={6}>
 				{technologies.length !== 0 && (
 					<Text mr={2} fontFamily={"cursive"}>
 						Tecnologías:
 					</Text>
 				)}
-
 				{technologies.map((tech, idx) => (
 					<Text key={tech.id} color={tech?.color} mr={2} fontFamily={"cursive"}>
 						{tech?.name}
 						{idx !== technologies.length - 1 && ", "}
 					</Text>
 				))}
-			</Text>
+			</Box>
 		);
 	};
 
