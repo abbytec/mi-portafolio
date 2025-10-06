@@ -121,12 +121,10 @@ export default function Home() {
 					Provincia de Cordoba.
 				</Text>
 				<Text>
-					<b style={{ color: "var(--chakra-colors-secondary)" }}>Fortalezas y debilidades:</b>&ensp;Tengo Trastorno de Deficit de
-					Atención e Hiperactividad diagnosticado, por lo que para evitar perder la concentración, suelo realizar un esfuerzo extra a
-					la hora de organizar (detalladamente) mis tareas y espacio de trabajo, mediante notas en papel, alarmas y archivos de texto.
-					<br />A la hora de programar, con frecuencia entro en <b>hiperfoco</b> (un momento donde se concentra toda esa actividad
-					neuronal en una tarea específica). Lo que me permite resolver tareas dificiles para la mayoría o trabajar mejor bajo presión,
-					obteniendo así con frecuencia el reconocimiento de mis compañer@s.
+					<b style={{ color: "var(--chakra-colors-secondary)" }}>Cómo trabajo:</b>&ensp;
+					Diseño rutinas de alto enfoque: listas accionables, time-boxing, alarmas y revisión diaria. 
+					<br/>
+					Cuando un reto lo amerita, entro en foco profundo y acelero la entrega manteniendo calidad y comunicación con el equipo.
 				</Text>
 			</Box>
 			<Box className="blocky-style">
