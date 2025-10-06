@@ -298,6 +298,7 @@ const jsonData: Education = {
 		{ id: "ui-ux", name: "UI/UX", color: "#e67e22" },
 		{ id: "sass-scss", name: "SASS/SCSS", color: "#cd6799" },
 		{ id: "javascript", name: "JavaScript", color: "#EBD41D" },
+		{ id: "typescript", name: "TypeScript", color: "#007acc" },
 		{ id: "html-css", name: "HTML/CSS", color: "#264de4" },
 
 		{ id: "ciencia-de-datos", name: "Ciencia de datos", isCategory: true, color: "#8e44ad" },
