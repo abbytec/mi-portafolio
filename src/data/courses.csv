@@ -73,7 +73,6 @@ angular-5,false,Angular práctico: Desarrolla una aplicación web para gestión 
 java-1,true,JAVA Course (Sololearn),,,https://www.sololearn.com/en/learn/courses/le-java,desarrollo-software|java
 java-2,false,Java Essential Training: Syntax and Structure,,2h 28min,https://www.linkedin.com/learning/java-essential-training-syntax-and-structure-16025610/,desarrollo-software|java
 java-3,false,Java Essential Training: Objects and APIs,,2h 10min,https://www.linkedin.com/learning/java-essential-training-objects-and-apis-16021820/,desarrollo-software|java
-java-spring-1,false,Learning Spring with Spring Boot,,2h 13min,https://www.linkedin.com/learning/learning-spring-with-spring-boot-13886371/,desarrollo-software|java|spring
 java-4,false,Learning JDBC (2019),,2h 12min,https://www.linkedin.com/learning/learning-jdbc-2019/,desarrollo-software|java|mysql
 java-5,false,Learning Java Collections,,3h 10min,https://www.linkedin.com/learning/learning-java-collections/j,desarrollo-software|java
 java-6,false,Java Memory Management: Values and References,,1h 15min,https://www.linkedin.com/learning/java-memory-management-values-and-references/,desarrollo-software|java
@@ -93,12 +92,14 @@ java-19,false,Java: Advanced Concepts for High-Performance Development,,1h 57min
 java-20,false,Introduction to Docker for Java Developers,,1h 22min,https://www.linkedin.com/learning/introduction-to-docker-for-java-developers,desarrollo-software|docker|java
 java-21,false,Data Science for Java Developers,,3h 51min,https://www.linkedin.com/learning/data-science-for-java-developers,desarrollo-software|ciencia-de-datos|java
 java-22,false,"Advanced Java: Hands-on with Streams, Lambda Expressions, Collections, Generics and More",,50min,https://www.linkedin.com/learning/advanced-java-hands-on-with-streams-lambda-expressions-collections-generics-and-more,desarrollo-software|java
+java-spring-0,true,Learning Spring with Spring Boot,,2h 13min,https://www.linkedin.com/learning/learning-spring-with-spring-boot-13886371/,desarrollo-software|java|spring
 java-spring-1,false,Learning Spring 6 with Spring Boot 3,,1h 49min,https://www.linkedin.com/learning/learning-spring-6-with-spring-boot-3,desarrollo-software|java|spring
 java-spring-2,false,Creating Your First Spring Boot Microservice,,1h 48min,https://www.linkedin.com/learning/creating-your-first-spring-boot-microservice,desarrollo-software|java|spring
 java-spring-3,false,"Extending, Securing, and Dockerizing Spring Boot Microservices",,2h 4min,https://www.linkedin.com/learning/extending-securing-and-dockerizing-spring-boot-microservices,desarrollo-software|java|spring|docker
 java-spring-4,false,Spring Data,,1h 41min,https://www.linkedin.com/learning/spring-data,desarrollo-software|java|spring
 java-spring-5,false,Spring Security,,1h 31min,https://www.linkedin.com/learning/spring-spring-security-15832928,desarrollo-software|java|spring
 java-spring-6,false,Building Full-Stack Apps with React and Spring,,1h 26min,https://www.linkedin.com/learning/building-full-stack-apps-with-react-and-spring,desarrollo-software|java|spring
+java-spring-7,true,AI Data Pipelines with Spring,,1h 37min,https://www.linkedin.com/learning/ai-data-pipelines-with-spring/,desarrollo-software|ciencia-de-datos|java|spring
 sql-1,true,SQL Course (Sololearn),,,https://www.sololearn.com/en/learn/courses/le-sql,ciencia-de-datos|mysql
 sql-2,true,PostgreSQL esencial,,,https://www.linkedin.com/learning/postgresql-esencial-2/,ciencia-de-datos|postgresql
 cpp-1,true,C Course (Sololearn),,,https://www.sololearn.com/en/learn/courses/le-c,desarrollo-software|c-plus-plus
