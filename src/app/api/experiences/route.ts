@@ -17,8 +17,8 @@ const data: ExperiencesResponse = {
 		{
 			title: "Superbid Exchange (Mediante Blink como consultora)",
 			description:
-				"Desarrollo FullStack con Java Spring (Apis Rest), Nest y React (Typescript + Material Design). VCS utilizados: AWS Codecommit, Gitlab y Github. Utilizamos metodología Scrum (con Jira).\nOtras tecnologías utilizadas: Apache Camel, Apache Kafka, RabbitMQ, MongoDB, OracleSQL y AWS.",
-			period: "2023 - Actualmente",
+				"Desarrolladora FullStack con Java Spring (Apis Rest), Nest y React (Typescript + Material Design). VCS utilizados: AWS Codecommit, Gitlab y Github. Utilizamos metodología Scrum (con Jira).\nOtras tecnologías utilizadas: Apache Camel, Apache Kafka, RabbitMQ, MongoDB, OracleSQL y AWS.",
+			period: "Abril 2023 - Febrero 2026",
 			url: "https://www.superbid.net/",
 		},
 		{
